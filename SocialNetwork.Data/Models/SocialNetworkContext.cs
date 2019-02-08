@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SocialNetwork.Data.Models
 {
-    class SocialNetworkContext : DbContext
+    public class SocialNetworkContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<FollowersFollowed> FollowersFollowed { get; set; }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SocialNetwork.Data.Models
 {
-    class GroupPost
+    public class GroupPost
     {
         public int GroupId { get; set; }
         public Group Group { get; set; }

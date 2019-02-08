@@ -9,3 +9,14 @@ C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork
 C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfo.cs
 C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.dll
 C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csprojAssemblyReference.cache
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CoreCompileInputs.cache
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfoInputs.cache
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfo.cs
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.dll
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.deps.json
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.json
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.dev.json
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.dll
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.pdb

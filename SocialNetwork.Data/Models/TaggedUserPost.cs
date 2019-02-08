@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SocialNetwork.Data.Models
 {
-    class TaggedUserPost
+    public class TaggedUserPost
     {
         public int PostId { get; set; }
         public Post Post { get; set; }

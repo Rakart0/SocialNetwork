@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SocialNetwork.Data.Models
 {
-    class PostLike
+    public class PostLike
     {
         public int UserId { get; set; }
         public User User { get; set; }

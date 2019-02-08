@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SocialNetwork.Data.Models
 {
-    class HashtagPost
+    public class HashtagPost
     {
 
         public int PostId { get; set; }

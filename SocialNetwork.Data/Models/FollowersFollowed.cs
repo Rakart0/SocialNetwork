@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SocialNetwork.Data.Models
 {
-    class FollowersFollowed
+    public class FollowersFollowed
     {
         public int FollowerId { get; set; }
         public User Follower { get; set; }

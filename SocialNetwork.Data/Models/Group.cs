@@ -7,7 +7,7 @@ using System.Text;
 namespace SocialNetwork.Data.Models
 {
     [Table("Group")]
-    class Group
+    public class Group
     {
         [Key]
         public int GroupeId { get; set; }
