@@ -13,6 +13,9 @@ using Microsoft.EntityFrameworkCore;
 using Socialnetwork.Webclient.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SocialNetwork.Data.Models;
+using SocialNetwork.Data.Repository;
+using SocialNetwork.Data.Repository.Interfaces;
 
 namespace Socialnetwork.Webclient
 {
@@ -38,11 +41,16 @@ namespace Socialnetwork.Webclient
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<SocialNetworkContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-
+           
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddTransient<IRepoUser, RepoUser>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

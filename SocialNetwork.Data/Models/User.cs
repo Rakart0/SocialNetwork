@@ -17,12 +17,7 @@ namespace SocialNetwork.Data.Models
         [Required]
         [StringLength(50)]
         public string UserName { get; set; }
-
-        [Required]
-        [DataType(DataType.Password)]
-        [MinLength(8)]
-        public string Password { get; set; }
-
+        
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }

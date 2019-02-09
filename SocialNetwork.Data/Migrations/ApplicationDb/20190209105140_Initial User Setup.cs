@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Socialnetwork.Webclient.Data.Migrations
+namespace SocialNetwork.Data.Migrations.ApplicationDb
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class InitialUserSetup : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

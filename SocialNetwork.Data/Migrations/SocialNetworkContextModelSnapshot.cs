@@ -165,9 +165,6 @@ namespace SocialNetwork.Data.Migrations
 
                     b.Property<int?>("GroupeId");
 
-                    b.Property<string>("Password")
-                        .IsRequired();
-
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasMaxLength(50);

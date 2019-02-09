@@ -20,3 +20,17 @@ D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2
 D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.dev.json
 D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.dll
 D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.deps.json
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.json
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.dev.json
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.dll
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csprojAssemblyReference.cache
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CoreCompileInputs.cache
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfoInputs.cache
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfo.cs
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.dll
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CopyComplete

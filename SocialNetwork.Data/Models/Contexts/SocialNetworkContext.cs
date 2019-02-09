@@ -18,11 +18,9 @@ namespace SocialNetwork.Data.Models
         public DbSet<TaggedUserPost> TaggedUserPosts { get; set; }
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public SocialNetworkContext(DbContextOptions<SocialNetworkContext> options)
+            : base(options)
         {
-            const string connectionString = "Server=TFNSDOTDE0403B;Database=SocialNetwork  ;Trusted_Connection=True;";
-
-            optionsBuilder.UseSqlServer(connectionString);
         }
 
 
