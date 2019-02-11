@@ -86,7 +86,6 @@ namespace Socialnetwork.Webclient.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 var u = new User { UserName = Input.UserName, ApplicationUser = user, Email = Input.Email, UserPictureUrl = "www.google.be" };
-                    user.User = u;
                     repo.AddUser(u);
                 //---C'est sale jusqu'ici----
                 if (result.Succeeded)

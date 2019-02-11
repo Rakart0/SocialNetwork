@@ -7,7 +7,7 @@ namespace SocialNetwork.Data.Models.IdentityModels
 {
     public class ApplicationUser : IdentityUser
     {
-        public virtual User User { get; set; }
+       
     }
 }
 

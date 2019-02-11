@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Socialnetwork.Webclient.Models;
+using SocialNetwork.Data.Models;
 using SocialNetwork.Data.Models.IdentityModels;
 using SocialNetwork.Data.Repository;
 using SocialNetwork.Data.Repository.Interfaces;
@@ -26,19 +27,16 @@ namespace Socialnetwork.Webclient.Controllers
 
         public IActionResult Index()
         {
+            var ua = new List<User>();
             if (User.Identity.IsAuthenticated)
             {
-                //Comme ça ça marche pas :
-                //var appUser = UserManager.FindByIdAsync(GetId()).Result;
                 var InfoUser = repo.GetById(GetId());
                 var testR = InfoUser.UserPictureUrl;
-  
-
-             // var testa = repo.GetById(GetId());
-             // var testR = repo.GetById(GetId()).UserPictureUrl;
+                 ua = repo.GetFollowers(GetId()).ToList();
+                
             ViewBag.test = testR;
             }
-            return View();
+            return View(ua);
         }
 
         public IActionResult Privacy()
@@ -58,8 +56,13 @@ namespace Socialnetwork.Webclient.Controllers
             
             return View(repo.GetAll());
         }
-        
 
+        public IActionResult Follow()
+        {
+            var ua = new List<User>();
+
+            return View();
+        }
 
         public string GetId()
         {

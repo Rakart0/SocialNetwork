@@ -11,6 +11,8 @@ namespace SocialNetwork.Data.Models
 
     public class User
     {
+        //Note : Dans un idéal de sécurité est-ce que séparer key et l'user id ne serait pas une bonne idée ?
+        
 
         [Key, ForeignKey("ApplicationUser")]
         public string UserId { get; set; }
