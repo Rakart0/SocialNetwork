@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using SocialNetwork.Data.Models.IdentityModels;
 
 namespace Socialnetwork.Webclient.Areas.Identity.Pages.Account.Manage
 {

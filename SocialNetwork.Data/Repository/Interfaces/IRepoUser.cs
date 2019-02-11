@@ -8,7 +8,7 @@ namespace SocialNetwork.Data.Repository.Interfaces
     public interface IRepoUser
     {
         IEnumerable<User> GetAll();
-        User GetById(int id);
+        User GetById(string id);
         int AddUser(User u);
         int UpdateUser(int id);
         int DeleteUser(int id);

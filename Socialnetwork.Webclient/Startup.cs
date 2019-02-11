@@ -16,6 +16,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SocialNetwork.Data.Models;
 using SocialNetwork.Data.Repository;
 using SocialNetwork.Data.Repository.Interfaces;
+using SocialNetwork.Data.Models.IdentityModels;
 
 namespace Socialnetwork.Webclient
 {
@@ -42,10 +43,8 @@ namespace Socialnetwork.Webclient
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDbContext<SocialNetworkContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
+          
+            services.AddDefaultIdentity<ApplicationUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
            

@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using SocialNetwork.Data.Models;
+using SocialNetwork.Data.Models.IdentityModels;
 using SocialNetwork.Data.Repository.Interfaces;
 
 namespace Socialnetwork.Webclient.Areas.Identity.Pages.Account
@@ -16,16 +18,17 @@ namespace Socialnetwork.Webclient.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
-        IRepoUser repo;
+
+        private readonly IRepoUser repo;
 
         public RegisterModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager,
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
             IRepoUser _repo)
@@ -44,10 +47,7 @@ namespace Socialnetwork.Webclient.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-
-
             [Required]
-            [StringLength(50)]
             [Display(Name = "User Name")]
             public string UserName { get; set; }
 
@@ -55,6 +55,7 @@ namespace Socialnetwork.Webclient.Areas.Identity.Pages.Account
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
+
 
 
             [Required]
@@ -79,8 +80,15 @@ namespace Socialnetwork.Webclient.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = Input.UserName, Email = Input.Email };
+
+                //-----C'est sale ici----
+                var user = new ApplicationUser { UserName = Input.UserName, Email = Input.Email};
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
+                var u = new User { UserName = Input.UserName, ApplicationUser = user, Email = Input.Email, UserPictureUrl = "www.google.be" };
+                    user.User = u;
+                    repo.AddUser(u);
+                //---C'est sale jusqu'ici----
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");

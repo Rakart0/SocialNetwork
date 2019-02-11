@@ -1,4 +1,6 @@
-﻿using SocialNetwork.Data.Models;
+﻿using Socialnetwork.Webclient.Data;
+using SocialNetwork.Data.Models;
+using SocialNetwork.Data.Models.IdentityModels;
 using SocialNetwork.Data.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,9 +10,9 @@ namespace SocialNetwork.Data.Repository
 {
     public class RepoUser : IRepoUser
     {
-        SocialNetworkContext ctx;
+        ApplicationDbContext ctx;
 
-        public RepoUser(SocialNetworkContext _context)
+        public RepoUser(ApplicationDbContext _context)
         {
             ctx = _context;
         }
@@ -18,6 +20,7 @@ namespace SocialNetwork.Data.Repository
         public int AddUser(User u)
         {
             ctx.Users.Add(u);
+            //ctx.ApplicationUser.Update()
             return ctx.SaveChanges();
             
         }
@@ -32,9 +35,9 @@ namespace SocialNetwork.Data.Repository
             return ctx.Users;
         }
 
-        public User GetById(int id)
+        public User GetById(string id)
         {
-            throw new NotImplementedException();
+            return ctx.Users.Find(id);
         }
 
         public int UpdateUser(int id)

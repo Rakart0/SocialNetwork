@@ -2,19 +2,15 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace SocialNetwork.Data.Migrations
+namespace SocialNetwork.Data.Migrations.ApplicationDb
 {
-    public partial class Second : Migration
+    public partial class LinkIdentityWithUser : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Status");
-
-            migrationBuilder.AddColumn<int>(
-                name: "GroupeId",
-                table: "User",
-                nullable: true);
+            migrationBuilder.DropColumn(
+                name: "UserId",
+                table: "AspNetUsers");
 
             migrationBuilder.CreateTable(
                 name: "Hashtags",
@@ -30,6 +26,64 @@ namespace SocialNetwork.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "GroupPosts",
+                columns: table => new
+                {
+                    GroupId = table.Column<int>(nullable: false),
+                    PostId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GroupPosts", x => new { x.PostId, x.GroupId });
+                });
+
+            migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(nullable: false),
+                    UserName = table.Column<string>(maxLength: 50, nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    UserPictureUrl = table.Column<string>(nullable: true),
+                    GroupeId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.UserId);
+                    table.ForeignKey(
+                        name: "FK_User_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FollowersFollowed",
+                columns: table => new
+                {
+                    FollowerId = table.Column<string>(nullable: false),
+                    FollowedId = table.Column<string>(nullable: false),
+                    FollowerUserId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FollowersFollowed", x => new { x.FollowerId, x.FollowedId });
+                    table.ForeignKey(
+                        name: "FK_FollowersFollowed_User_FollowerId",
+                        column: x => x.FollowerId,
+                        principalTable: "User",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_FollowersFollowed_User_FollowerUserId",
+                        column: x => x.FollowerUserId,
+                        principalTable: "User",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Post",
                 columns: table => new
                 {
@@ -40,7 +94,7 @@ namespace SocialNetwork.Data.Migrations
                     IsOriginalPost = table.Column<bool>(nullable: false),
                     OriginalPostPostId = table.Column<int>(nullable: true),
                     InResponseToPostId = table.Column<int>(nullable: true),
-                    PosterUserId = table.Column<int>(nullable: true)
+                    PosterUserId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -72,7 +126,7 @@ namespace SocialNetwork.Data.Migrations
                     GroupeId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     GroupName = table.Column<string>(maxLength: 50, nullable: false),
-                    AdminUserId = table.Column<int>(nullable: true),
+                    AdminUserId = table.Column<string>(nullable: true),
                     AnnouncedPostPostId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -120,7 +174,7 @@ namespace SocialNetwork.Data.Migrations
                 name: "PostLike",
                 columns: table => new
                 {
-                    UserId = table.Column<int>(nullable: false),
+                    UserId = table.Column<string>(nullable: false),
                     PostId = table.Column<int>(nullable: false),
                     Like = table.Column<bool>(nullable: false)
                 },
@@ -146,7 +200,7 @@ namespace SocialNetwork.Data.Migrations
                 columns: table => new
                 {
                     PostId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false)
+                    UserId = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -165,34 +219,10 @@ namespace SocialNetwork.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "MyProperty",
-                columns: table => new
-                {
-                    GroupId = table.Column<int>(nullable: false),
-                    PostId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MyProperty", x => new { x.PostId, x.GroupId });
-                    table.ForeignKey(
-                        name: "FK_MyProperty_Group_GroupId",
-                        column: x => x.GroupId,
-                        principalTable: "Group",
-                        principalColumn: "GroupeId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_MyProperty_Post_PostId",
-                        column: x => x.PostId,
-                        principalTable: "Post",
-                        principalColumn: "PostId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
-                name: "IX_User_GroupeId",
-                table: "User",
-                column: "GroupeId");
+                name: "IX_FollowersFollowed_FollowerUserId",
+                table: "FollowersFollowed",
+                column: "FollowerUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Group_AdminUserId",
@@ -205,14 +235,14 @@ namespace SocialNetwork.Data.Migrations
                 column: "AnnouncedPostPostId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_GroupPosts_GroupId",
+                table: "GroupPosts",
+                column: "GroupId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_HashtagPost_PostId",
                 table: "HashtagPost",
                 column: "PostId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_MyProperty_GroupId",
-                table: "MyProperty",
-                column: "GroupId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Post_InResponseToPostId",
@@ -239,6 +269,27 @@ namespace SocialNetwork.Data.Migrations
                 table: "TaggedUserPosts",
                 column: "PostId");
 
+            migrationBuilder.CreateIndex(
+                name: "IX_User_GroupeId",
+                table: "User",
+                column: "GroupeId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_GroupPosts_Post_PostId",
+                table: "GroupPosts",
+                column: "PostId",
+                principalTable: "Post",
+                principalColumn: "PostId",
+                onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_GroupPosts_Group_GroupId",
+                table: "GroupPosts",
+                column: "GroupId",
+                principalTable: "Group",
+                principalColumn: "GroupeId",
+                onDelete: ReferentialAction.Cascade);
+
             migrationBuilder.AddForeignKey(
                 name: "FK_User_Group_GroupeId",
                 table: "User",
@@ -251,14 +302,21 @@ namespace SocialNetwork.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_User_Group_GroupeId",
-                table: "User");
+                name: "FK_Group_User_AdminUserId",
+                table: "Group");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Post_User_PosterUserId",
+                table: "Post");
+
+            migrationBuilder.DropTable(
+                name: "FollowersFollowed");
+
+            migrationBuilder.DropTable(
+                name: "GroupPosts");
 
             migrationBuilder.DropTable(
                 name: "HashtagPost");
-
-            migrationBuilder.DropTable(
-                name: "MyProperty");
 
             migrationBuilder.DropTable(
                 name: "PostLike");
@@ -270,45 +328,18 @@ namespace SocialNetwork.Data.Migrations
                 name: "Hashtags");
 
             migrationBuilder.DropTable(
+                name: "User");
+
+            migrationBuilder.DropTable(
                 name: "Group");
 
             migrationBuilder.DropTable(
                 name: "Post");
 
-            migrationBuilder.DropIndex(
-                name: "IX_User_GroupeId",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "GroupeId",
-                table: "User");
-
-            migrationBuilder.CreateTable(
-                name: "Status",
-                columns: table => new
-                {
-                    StatusID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Edited = table.Column<bool>(nullable: false),
-                    StatusContent = table.Column<string>(nullable: false),
-                    StatusPostDate = table.Column<DateTime>(nullable: false),
-                    UserId = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Status", x => x.StatusID);
-                    table.ForeignKey(
-                        name: "FK_Status_User_UserId",
-                        column: x => x.UserId,
-                        principalTable: "User",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Status_UserId",
-                table: "Status",
-                column: "UserId");
+            migrationBuilder.AddColumn<int>(
+                name: "UserId",
+                table: "AspNetUsers",
+                nullable: true);
         }
     }
 }

@@ -73,6 +73,9 @@ namespace SocialNetwork.Data.Migrations.ApplicationDb
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired();
+
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
@@ -112,6 +115,8 @@ namespace SocialNetwork.Data.Migrations.ApplicationDb
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -184,6 +189,170 @@ namespace SocialNetwork.Data.Migrations.ApplicationDb
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("SocialNetwork.Data.Models.FollowersFollowed", b =>
+                {
+                    b.Property<string>("FollowerId");
+
+                    b.Property<string>("FollowedId");
+
+                    b.Property<string>("FollowerUserId");
+
+                    b.HasKey("FollowerId", "FollowedId");
+
+                    b.HasIndex("FollowerUserId");
+
+                    b.ToTable("FollowersFollowed");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.Group", b =>
+                {
+                    b.Property<int>("GroupeId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AdminUserId");
+
+                    b.Property<int?>("AnnouncedPostPostId");
+
+                    b.Property<string>("GroupName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.HasKey("GroupeId");
+
+                    b.HasIndex("AdminUserId");
+
+                    b.HasIndex("AnnouncedPostPostId");
+
+                    b.ToTable("Group");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.GroupPost", b =>
+                {
+                    b.Property<int>("PostId");
+
+                    b.Property<int>("GroupId");
+
+                    b.HasKey("PostId", "GroupId");
+
+                    b.HasIndex("GroupId");
+
+                    b.ToTable("GroupPosts");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.Hashtag", b =>
+                {
+                    b.Property<int>("HashtagId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("HashtagName");
+
+                    b.HasKey("HashtagId");
+
+                    b.ToTable("Hashtags");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.HashtagPost", b =>
+                {
+                    b.Property<int>("HashtagId");
+
+                    b.Property<int>("PostId");
+
+                    b.HasKey("HashtagId", "PostId");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("HashtagPost");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.Post", b =>
+                {
+                    b.Property<int>("PostId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("InResponseToPostId");
+
+                    b.Property<bool>("IsOriginalPost");
+
+                    b.Property<int?>("OriginalPostPostId");
+
+                    b.Property<string>("PostContent")
+                        .IsRequired();
+
+                    b.Property<DateTime>("PostTime");
+
+                    b.Property<string>("PosterUserId");
+
+                    b.HasKey("PostId");
+
+                    b.HasIndex("InResponseToPostId");
+
+                    b.HasIndex("OriginalPostPostId");
+
+                    b.HasIndex("PosterUserId");
+
+                    b.ToTable("Post");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.PostLike", b =>
+                {
+                    b.Property<int>("PostId");
+
+                    b.Property<string>("UserId");
+
+                    b.Property<bool>("Like");
+
+                    b.HasKey("PostId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("PostLike");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.TaggedUserPost", b =>
+                {
+                    b.Property<string>("UserId");
+
+                    b.Property<int>("PostId");
+
+                    b.HasKey("UserId", "PostId");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("TaggedUserPosts");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.User", b =>
+                {
+                    b.Property<string>("UserId");
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.Property<int?>("GroupeId");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("UserPictureUrl");
+
+                    b.HasKey("UserId");
+
+                    b.HasIndex("GroupeId");
+
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.IdentityModels.ApplicationUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.HasDiscriminator().HasValue("ApplicationUser");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
@@ -226,6 +395,108 @@ namespace SocialNetwork.Data.Migrations.ApplicationDb
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.FollowersFollowed", b =>
+                {
+                    b.HasOne("SocialNetwork.Data.Models.User", "Followed")
+                        .WithMany("Followers")
+                        .HasForeignKey("FollowerId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SocialNetwork.Data.Models.User", "Follower")
+                        .WithMany("Following")
+                        .HasForeignKey("FollowerUserId");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.Group", b =>
+                {
+                    b.HasOne("SocialNetwork.Data.Models.User", "Admin")
+                        .WithMany("SubscribedGroups")
+                        .HasForeignKey("AdminUserId");
+
+                    b.HasOne("SocialNetwork.Data.Models.Post", "AnnouncedPost")
+                        .WithMany()
+                        .HasForeignKey("AnnouncedPostPostId");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.GroupPost", b =>
+                {
+                    b.HasOne("SocialNetwork.Data.Models.Group", "Group")
+                        .WithMany("Posts")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SocialNetwork.Data.Models.Post", "Post")
+                        .WithMany("TaggedGroups")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.HashtagPost", b =>
+                {
+                    b.HasOne("SocialNetwork.Data.Models.Hashtag", "Hashtag")
+                        .WithMany("Posts")
+                        .HasForeignKey("HashtagId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SocialNetwork.Data.Models.Post", "Post")
+                        .WithMany("Hashtag")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.Post", b =>
+                {
+                    b.HasOne("SocialNetwork.Data.Models.Post", "InResponseTo")
+                        .WithMany("Responses")
+                        .HasForeignKey("InResponseToPostId");
+
+                    b.HasOne("SocialNetwork.Data.Models.Post", "OriginalPost")
+                        .WithMany()
+                        .HasForeignKey("OriginalPostPostId");
+
+                    b.HasOne("SocialNetwork.Data.Models.User", "Poster")
+                        .WithMany("Posts")
+                        .HasForeignKey("PosterUserId");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.PostLike", b =>
+                {
+                    b.HasOne("SocialNetwork.Data.Models.Post", "Post")
+                        .WithMany("Likes")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SocialNetwork.Data.Models.User", "User")
+                        .WithMany("LikedPosts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.TaggedUserPost", b =>
+                {
+                    b.HasOne("SocialNetwork.Data.Models.Post", "Post")
+                        .WithMany("TaggedPeople")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SocialNetwork.Data.Models.User", "User")
+                        .WithMany("TaggedPosts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.User", b =>
+                {
+                    b.HasOne("SocialNetwork.Data.Models.Group")
+                        .WithMany("Moderators")
+                        .HasForeignKey("GroupeId");
+
+                    b.HasOne("SocialNetwork.Data.Models.IdentityModels.ApplicationUser", "ApplicationUser")
+                        .WithOne("User")
+                        .HasForeignKey("SocialNetwork.Data.Models.User", "UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

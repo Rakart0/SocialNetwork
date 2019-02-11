@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SocialNetwork.Data.Models.IdentityModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,8 +12,8 @@ namespace SocialNetwork.Data.Models
     public class User
     {
 
-        [Key]
-        public int UserId { get; set; }
+        [Key, ForeignKey("ApplicationUser")]
+        public string UserId { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -36,6 +37,7 @@ namespace SocialNetwork.Data.Models
         [DataType(DataType.Url)]
         public string UserPictureUrl { get; set; }
 
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         //A envisager plus tard :
 
