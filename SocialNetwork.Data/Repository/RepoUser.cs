@@ -54,13 +54,26 @@ namespace SocialNetwork.Data.Repository
             
         }
 
-        public int AddFollower(User Followed, User Follower)
+        public IEnumerable<User> GetFollowing(string id)
         {
+            return ctx.FollowersFollowed.Where(f => f.FollowerId == id).Select(u => u.Followed).ToList();
+
+        }
+
+
+
+        public int AddFollower(string _FollowedId, string _FollowerId)
+        {
+            //Oui oui c'est de la merde c'est en cours de debug
+            User pfollower = GetById(_FollowerId);
+            User pfollowed = GetById(_FollowedId);
+
             ctx.FollowersFollowed.Add(new FollowersFollowed {
-                FollowedId = Followed.UserId,
-                FollowerId = Follower.UserId,
-                Followed = Followed,
-                Follower = Follower });
+                FollowedId = _FollowedId,
+                FollowerId = _FollowerId,
+                Followed = pfollowed,
+                Follower = pfollower });
+
 
             return ctx.SaveChanges();
         }

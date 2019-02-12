@@ -27,16 +27,8 @@ namespace Socialnetwork.Webclient.Controllers
 
         public IActionResult Index()
         {
-            var ua = new List<User>();
-            if (User.Identity.IsAuthenticated)
-            {
-                var InfoUser = repo.GetById(GetId());
-                var testR = InfoUser.UserPictureUrl;
-                 ua = repo.GetFollowers(GetId()).ToList();
-                
-            ViewBag.test = testR;
-            }
-            return View(ua);
+          
+            return View();
         }
 
         public IActionResult Privacy()
@@ -49,20 +41,7 @@ namespace Socialnetwork.Webclient.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-        //Note : oué oué c'est de la merde mais c'est juste pour vérifier que ça fonctionne bien.
-        public IActionResult Users()
-        {
-            
-            return View(repo.GetAll());
-        }
-
-        public IActionResult Follow()
-        {
-            var ua = new List<User>();
-
-            return View();
-        }
+        
 
         public string GetId()
         {

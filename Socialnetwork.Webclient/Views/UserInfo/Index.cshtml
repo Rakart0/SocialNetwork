@@ -1,0 +1,24 @@
+﻿@model IEnumerable<SocialNetwork.Data.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>User management and shit</h1>
+<h2>(genre follow et autres conneries)</h2>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p><h3>Liste des utilisateur followed :</h3></p>
+    foreach (var item in Model)
+    {
+        @Html.DisplayFor(modelItem => item.UserName);
+        <br />
+    }
+}
+<ul>
+
+<li>
+<a asp-controller="UserInfo" asp-action="Users">User list</a>
+</li>
+</ul>

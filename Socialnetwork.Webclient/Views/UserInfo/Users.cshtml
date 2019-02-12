@@ -9,11 +9,9 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-@ViewBag.test
 <table class="table">
     <thead>
         <tr>
-          
             <th>
                 @Html.DisplayNameFor(model => model.UserName)
             </th>
@@ -29,7 +27,6 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-        
             <td>
                 @Html.DisplayFor(modelItem => item.UserName)
             </td>
@@ -39,11 +36,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.UserPictureUrl)
             </td>
-            <td>
-                @Html.ActionLink("Follow", "Follow", new { id=item.UserId })
-               
-            </td>
-        </tr>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <td>
+                    @Html.ActionLink("Follow", "Follow", new { id = item.UserId })
+
+                </td>
+            }
+            </tr>
 }
     </tbody>
 </table>

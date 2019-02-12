@@ -17,6 +17,7 @@ namespace SocialNetwork.Data.Repository.Interfaces
 
         //Trucs réels
         IEnumerable<User> GetFollowers(string id);
-
+        IEnumerable<User> GetFollowing(string id);
+        int AddFollower(string _FollowedId, string _FollowerId);
     }
 }

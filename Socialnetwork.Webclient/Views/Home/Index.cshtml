@@ -1,18 +1,8 @@
-﻿@model IEnumerable<SocialNetwork.Data.Models.User>
-
-
+﻿
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    @ViewBag.test
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-Followers :
-@foreach (var item in Model)
-{
-    @Html.DisplayFor(modelItem => item.UserName)
-    <br />
-}

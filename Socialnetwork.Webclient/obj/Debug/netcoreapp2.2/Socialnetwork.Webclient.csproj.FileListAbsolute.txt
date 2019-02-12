@@ -152,7 +152,6 @@ C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Raz
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
-C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Home\Users.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
@@ -166,5 +165,6 @@ C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Soc
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Socialnetwork.Webclient.csproj.CopyComplete
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Socialnetwork.Webclient.dll
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Socialnetwork.Webclient.pdb
-C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\UserInfo\IndexAsync.g.cshtml.cs
 D:\Work\Progra\C#\Technifutur\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\UserInfo\IndexAsync.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\UserInfo\Index.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\UserInfo\Users.g.cshtml.cs
