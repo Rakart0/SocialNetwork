@@ -13,7 +13,7 @@ namespace SocialNetwork.Data.Models
         public int PostId { get; set; }
 
         [Required]
-        [MaxLength]
+        //[MaxLength]
         public string PostContent { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime PostTime { get; set; }

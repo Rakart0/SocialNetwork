@@ -26,8 +26,8 @@ namespace SocialNetwork.Data.Models
         public string Email { get; set; }
 
 
-        public IEnumerable<FollowersFollowed> Following { get; set; }
-        public IEnumerable<FollowersFollowed> Followers { get; set; }
+        public ICollection<FollowersFollowed> Following { get; set; }
+        public ICollection<FollowersFollowed> Followers { get; set; }
 
         public IEnumerable<Group> SubscribedGroups { get; set; }
 

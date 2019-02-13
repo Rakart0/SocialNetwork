@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Socialnetwork.Webclient.Controllers.Converters;
 using SocialNetwork.Data.Models;
 using SocialNetwork.Data.Models.IdentityModels;
 using SocialNetwork.Data.Repository.Interfaces;
@@ -30,9 +31,13 @@ namespace Socialnetwork.Webclient.Controllers
 
         public IActionResult Users()
         {
-            return View(repo.GetAll());
+            return View(repo.GetAllWithFollowing().ToUi(repo.GetByIdWithFollowing(GetId())));
         }
 
+        public IActionResult Test()
+        {
+            return View();
+        }
         public IActionResult Follow(string id)
         {
             if (User.Identity.IsAuthenticated)
@@ -42,7 +47,16 @@ namespace Socialnetwork.Webclient.Controllers
             return View("Index", repo.GetFollowing(GetId()));
         }
 
-    
+        public IActionResult Unfollow(string id)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                repo.DeleteFollower(id, GetId());
+            }
+            return View("Index", repo.GetFollowing(GetId()));
+
+        }
+
         public string GetId()
         {
             var claimsIdentity = User.Identity as ClaimsIdentity;
