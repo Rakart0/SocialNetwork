@@ -50,6 +50,7 @@ namespace Socialnetwork.Webclient
            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddTransient<IRepoUser, RepoUser>();
+            services.AddTransient<IRepoPost, RepoPost>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

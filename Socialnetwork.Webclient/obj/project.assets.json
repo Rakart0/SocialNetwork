@@ -6216,7 +6216,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore/2.2.1": {
-      "sha512": "5fRYoE43lFwUd45Qp72IeaWxztgKFhKtH+/5w9J+f3jCPKux/qGriKMxWW+9V4BDu/p1xWtFJQFtcNfhOo+3dQ==",
+      "sha512": "NPLUN0CjvxirJYcsXdmxQKUKxKGlRikTYk3DYJZN2EZmfvtqgyphwe2wDM6rii8DAIJG/Yb5NeMapkT+eHGrLA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore/2.2.1",
       "files": [
@@ -6229,7 +6229,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Abstractions/2.2.1": {
-      "sha512": "upsGw2amZa0LNu/dAmDKQtc53q/9DjMA/wuDlv7lSzVHj2PlHewYlnMGtomI4YEf/lRqe5Z4V+QPJFdMGVZlaA==",
+      "sha512": "ps+DT7pm2v/hp+fL1IFFOO/IcklhvRpWJhEfnVG5SOKHQkCAMmm6bOKiBPMvf34AyjJE57REUFsyqJxl/j7g+w==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.abstractions/2.2.1",
       "files": [
@@ -6242,7 +6242,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Analyzers/2.2.1": {
-      "sha512": "449BpHABVbtekNyo1a00URxgPB1CFF3TaONAY1vXbU67jS5QOynjUbH+MiCkJVtIzoxuDOS2ybSOVGR8zd0J/Q==",
+      "sha512": "4gmeUeD1WFCXJLelSTRmS0O0ozYSPzUsectv6lLfhiCtS7AIIk1MBsRZzSrHiVzOv7b+ksLn76mmM0rG1f1kFg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.analyzers/2.2.1",
       "files": [
@@ -6284,7 +6284,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/2.2.1": {
-      "sha512": "yfsnjccSBIyWQuHg+zd2PxRoXNuRhC0T4jgtk5IjhToZ5TZMeAWjrhUbKjDG0Kth1IcND/i4ovOw7YplfKQt7A==",
+      "sha512": "vVTwPmR6671ykE2nAWCPgeADLVVradKPF3Apl9aP8fu0hPLddWIhkDH5ghL/EdvMQdIMqR3ccRJ+E8MQPLjutg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.relational/2.2.1",
       "files": [
@@ -6297,7 +6297,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.SqlServer/2.2.1": {
-      "sha512": "V58e2CI2eunGMUy+i7+S6JtyyVIb4DKCxYi8xf8Qz3r6RD7MliKBRfudiYm8I7aUqUmZsHOGXaOiPyb5diXnqg==",
+      "sha512": "gNd/3tkmTgUvyItVvWHbioHMuzK6kEZpqWzZU/7cS+OiydzPGGks//s5BlJWLfWPX5DmbN/uweu0Yr5EpY4sFA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.sqlserver/2.2.1",
       "files": [
@@ -8064,11 +8064,12 @@
       ]
     },
     "Newtonsoft.Json/11.0.2": {
-      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "sha512": "znZGbws7E4BA9jxNZ7FuiIRI3C9hrgatVQSTKhIYZYNOud4M5VfGlTYi6RdYO5sQrebFuF/g9UEV3hOxDMXF6Q==",
       "type": "package",
       "path": "newtonsoft.json/11.0.2",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -10166,7 +10167,7 @@
       ]
     },
     "System.Memory/4.5.1": {
-      "sha512": "sDJYJpGtTgx+23Ayu5euxG5mAXWdkDb4+b0rD0Cab0M1oQS9H0HXGPriKcqpXuiJDTV7fTp/d+fMDJmnr6sNvA==",
+      "sha512": "vcG3/MbfpxznMkkkaAblJi7RHOmuP7kawQMhDgLSuA1tRpRQYsFSCTxRSINDUgn2QNn2jWeLxv8er5BXbyACkw==",
       "type": "package",
       "path": "system.memory/4.5.1",
       "files": [
@@ -10191,11 +10192,12 @@
       ]
     },
     "System.Net.Http/4.3.0": {
-      "sha512": "sYg+FtILtRQuYWSIAuNOELwVuVsxVyJGWQyOnlAzhV4xvhyFnON1bAzYYC+jjRW8JREM45R0R5Dgi8MTC5sEwA==",
+      "sha512": "Z1UfSF6dlpCdZdxh6LeoGlYH+q6ptG/iiIWgUUeKhE3DbQACmZkU7Sz2nOX0qdHjz72MOdYRbkSJ5Qwl6sZgvg==",
       "type": "package",
       "path": "system.net.http/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/Xamarinmac20/_._",
@@ -11035,7 +11037,7 @@
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.5.1": {
-      "sha512": "Zh8t8oqolRaFa9vmOZfdQm/qKejdqz0J9kr7o2Fu0vPeoH3BL1EOXipKWwkWtLT1JPzjByrF19fGuFlNbmPpiw==",
+      "sha512": "qUJMNWhbm9oZ3XaMFiEMiYmRPszbnXIkRIi7+4b2Md2xZ6JUOepf0/kY3S85qistRohl9OdMe4PsO+RdG2kTIQ==",
       "type": "package",
       "path": "system.runtime.compilerservices.unsafe/4.5.1",
       "files": [
@@ -12961,23 +12963,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\studentdot0403\\.nuget\\packages\\": {},
+    "C:\\Users\\studentdot0410\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DevNet_2018\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
+      "projectUniqueName": "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
       "projectName": "Socialnetwork.Webclient",
-      "projectPath": "C:\\DevNet_2018\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
-      "packagesPath": "C:\\Users\\studentdot0403\\.nuget\\packages\\",
-      "outputPath": "C:\\DevNet_2018\\SocialNetwork\\Socialnetwork.Webclient\\obj\\",
+      "projectPath": "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
+      "packagesPath": "C:\\Users\\studentdot0410\\.nuget\\packages\\",
+      "outputPath": "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\Socialnetwork.Webclient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\studentdot0403\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\studentdot0410\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12990,8 +12992,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\DevNet_2018\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj": {
-              "projectPath": "C:\\DevNet_2018\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj"
+            "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj": {
+              "projectPath": "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj"
             }
           }
         }

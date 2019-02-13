@@ -77,8 +77,5 @@ namespace SocialNetwork.Data.Repository
 
             return ctx.SaveChanges();
         }
-
-        
-
     }
 }
