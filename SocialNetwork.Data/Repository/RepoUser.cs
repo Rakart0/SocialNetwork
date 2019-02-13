@@ -99,9 +99,6 @@ namespace SocialNetwork.Data.Repository
 
             return ctx.SaveChanges();
         }
-<<<<<<< HEAD
-
-
 
         public bool IsFollowing (string followerId, string followedId)
         {
@@ -111,7 +108,5 @@ namespace SocialNetwork.Data.Repository
             return a;
         }
         
-=======
->>>>>>> e143f8dc3aff0179488a06782b30740668530247
     }
 }
