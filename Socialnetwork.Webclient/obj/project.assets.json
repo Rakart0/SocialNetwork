@@ -6216,7 +6216,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore/2.2.1": {
-      "sha512": "5fRYoE43lFwUd45Qp72IeaWxztgKFhKtH+/5w9J+f3jCPKux/qGriKMxWW+9V4BDu/p1xWtFJQFtcNfhOo+3dQ==",
+      "sha512": "NPLUN0CjvxirJYcsXdmxQKUKxKGlRikTYk3DYJZN2EZmfvtqgyphwe2wDM6rii8DAIJG/Yb5NeMapkT+eHGrLA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore/2.2.1",
       "files": [
@@ -6229,7 +6229,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Abstractions/2.2.1": {
-      "sha512": "upsGw2amZa0LNu/dAmDKQtc53q/9DjMA/wuDlv7lSzVHj2PlHewYlnMGtomI4YEf/lRqe5Z4V+QPJFdMGVZlaA==",
+      "sha512": "ps+DT7pm2v/hp+fL1IFFOO/IcklhvRpWJhEfnVG5SOKHQkCAMmm6bOKiBPMvf34AyjJE57REUFsyqJxl/j7g+w==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.abstractions/2.2.1",
       "files": [
@@ -6242,7 +6242,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Analyzers/2.2.1": {
-      "sha512": "449BpHABVbtekNyo1a00URxgPB1CFF3TaONAY1vXbU67jS5QOynjUbH+MiCkJVtIzoxuDOS2ybSOVGR8zd0J/Q==",
+      "sha512": "4gmeUeD1WFCXJLelSTRmS0O0ozYSPzUsectv6lLfhiCtS7AIIk1MBsRZzSrHiVzOv7b+ksLn76mmM0rG1f1kFg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.analyzers/2.2.1",
       "files": [
@@ -6284,7 +6284,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/2.2.1": {
-      "sha512": "yfsnjccSBIyWQuHg+zd2PxRoXNuRhC0T4jgtk5IjhToZ5TZMeAWjrhUbKjDG0Kth1IcND/i4ovOw7YplfKQt7A==",
+      "sha512": "vVTwPmR6671ykE2nAWCPgeADLVVradKPF3Apl9aP8fu0hPLddWIhkDH5ghL/EdvMQdIMqR3ccRJ+E8MQPLjutg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.relational/2.2.1",
       "files": [
@@ -6297,7 +6297,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.SqlServer/2.2.1": {
-      "sha512": "V58e2CI2eunGMUy+i7+S6JtyyVIb4DKCxYi8xf8Qz3r6RD7MliKBRfudiYm8I7aUqUmZsHOGXaOiPyb5diXnqg==",
+      "sha512": "gNd/3tkmTgUvyItVvWHbioHMuzK6kEZpqWzZU/7cS+OiydzPGGks//s5BlJWLfWPX5DmbN/uweu0Yr5EpY4sFA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.sqlserver/2.2.1",
       "files": [
@@ -12965,23 +12965,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\rakar\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\studentdot0410\\.nuget\\packages\\": {},
+>>>>>>> e143f8dc3aff0179488a06782b30740668530247
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
       "projectName": "Socialnetwork.Webclient",
       "projectPath": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
       "packagesPath": "C:\\Users\\rakar\\.nuget\\packages\\",
       "outputPath": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\Socialnetwork.Webclient\\obj\\",
+=======
+      "projectUniqueName": "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
+      "projectName": "Socialnetwork.Webclient",
+      "projectPath": "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
+      "packagesPath": "C:\\Users\\studentdot0410\\.nuget\\packages\\",
+      "outputPath": "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\Socialnetwork.Webclient\\obj\\",
+>>>>>>> e143f8dc3aff0179488a06782b30740668530247
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\rakar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\studentdot0410\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> e143f8dc3aff0179488a06782b30740668530247
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12994,8 +13010,13 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
+<<<<<<< HEAD
             "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj": {
               "projectPath": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj"
+=======
+            "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj": {
+              "projectPath": "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj"
+>>>>>>> e143f8dc3aff0179488a06782b30740668530247
             }
           }
         }

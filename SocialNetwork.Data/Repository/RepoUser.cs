@@ -99,6 +99,7 @@ namespace SocialNetwork.Data.Repository
 
             return ctx.SaveChanges();
         }
+<<<<<<< HEAD
 
 
 
@@ -110,5 +111,7 @@ namespace SocialNetwork.Data.Repository
             return a;
         }
         
+=======
+>>>>>>> e143f8dc3aff0179488a06782b30740668530247
     }
 }
