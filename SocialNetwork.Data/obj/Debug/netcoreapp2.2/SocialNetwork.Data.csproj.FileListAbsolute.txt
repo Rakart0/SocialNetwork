@@ -1,36 +1,18 @@
-C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.deps.json
-C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.json
-C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.dev.json
-C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.dll
-C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
-C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csprojAssemblyReference.cache
-C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CoreCompileInputs.cache
-C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfoInputs.cache
-C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfo.cs
-C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.dll
-C:\Users\studentdot0403\Source\Workspaces\SocialNetwork-DotNet2019\SocialNetwork_DotNet2019\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
-D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csprojAssemblyReference.cache
-D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CoreCompileInputs.cache
-D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfoInputs.cache
-D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfo.cs
-D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.dll
-D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
-D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.deps.json
-D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.json
-D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.dev.json
-D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.dll
-D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.deps.json
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.json
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.dev.json
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.dll
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csprojAssemblyReference.cache
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CoreCompileInputs.cache
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfoInputs.cache
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfo.cs
+D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CopyComplete
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.dll
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
+<<<<<<< HEAD
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CopyComplete
@@ -62,3 +44,19 @@ C:\devnet2018_tristan\GitHub Projects\SocialNetwork\SocialNetwork.Data\bin\Debug
 C:\devnet2018_tristan\GitHub Projects\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
 C:\devnet2018_tristan\GitHub Projects\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CopyComplete
 C:\devnet2018_tristan\GitHub Projects\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csprojAssemblyReference.cache
+=======
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csprojAssemblyReference.cache
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CoreCompileInputs.cache
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfoInputs.cache
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfo.cs
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.deps.json
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.json
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.dev.json
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.dll
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CopyComplete
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.dll
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
+>>>>>>> 00c1a0d70d6c543740317d73dc0b4344667ce5ed

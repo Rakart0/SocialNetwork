@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SocialNetwork.Data.Models.User>
+﻿@model IEnumerable<Socialnetwork.Webclient.Models.UserFollowViewModel>
 
 @{
     ViewData["Title"] = "Users";
@@ -7,7 +7,7 @@
 <h1>Users</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+
 </p>
 <table class="table">
     <thead>
@@ -16,10 +16,10 @@
                 @Html.DisplayNameFor(model => model.UserName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                @Html.DisplayNameFor(model => model.email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserPictureUrl)
+                
             </th>
             <th></th>
         </tr>
@@ -31,17 +31,32 @@
                 @Html.DisplayFor(modelItem => item.UserName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @Html.DisplayFor(modelItem => item.email)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserPictureUrl)
-            </td>
+            
             @if (User.Identity.IsAuthenticated)
             {
-                <td>
-                    @Html.ActionLink("Follow", "Follow", new { id = item.UserId })
+            <td>
+                @if (item.isFollowedByLoggedUser == false)
+                {
+                    @Html.ActionLink("Follow", "Follow", new { id = item.userId })
+                }
+                else
+                {    
+                    @Html.ActionLink("Unfollow", "Unfollow", new { id = item.userId })
+                }
 
-                </td>
+            </td>
+            <td>
+                @if (item.isFollowingLoggedUser == true)
+                {
+                    <p>Is following you</p>
+                }
+                else
+                {
+                    <p>Is not  following you</p>
+                }
+            </td>
             }
             </tr>
 }
