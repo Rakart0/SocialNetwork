@@ -20,6 +20,7 @@ namespace Socialnetwork.Webclient.Data
         public DbSet<HashtagPost> HashtagPost { get; set; }
         public DbSet<PostLike> PostLike { get; set; }
         public DbSet<TaggedUserPost> TaggedUserPosts { get; set; }
+        public DbSet<PostImage> PostImages { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -112,6 +113,13 @@ namespace Socialnetwork.Webclient.Data
             modelBuilder.Entity<Post>()
                 .HasMany(p => p.Responses)
                 .WithOne(r => r.InResponseTo);
+
+            modelBuilder.Entity<PostImage>()
+                .HasKey(u => u.Url);
+            modelBuilder.Entity<PostImage>()
+                .HasOne(p => p.Post);
+                
+                
 
 
 

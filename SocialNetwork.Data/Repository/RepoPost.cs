@@ -1,4 +1,5 @@
-﻿using Socialnetwork.Webclient.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Socialnetwork.Webclient.Data;
 using SocialNetwork.Data.Models;
 using SocialNetwork.Data.Repository.Interfaces;
 using System;
@@ -13,35 +14,61 @@ namespace SocialNetwork.Data.Repository
         ApplicationDbContext ctx;
 
         public RepoPost(ApplicationDbContext _context)
-        {
+            {
             ctx = _context;
-        }
+            }
         public IEnumerable<Post> GetAll()
         {
             return ctx.Posts;
         }
         public Post GetById(int id)
         {
-            return ctx.Posts.Find(id);
-        }
-        public IEnumerable<PostLike> PostLike(int id)
-        {
-            return ctx.PostLike.Where(pl => pl.PostId == id).ToList();
+            return ctx.Posts.FirstOrDefault(p => p.PostId == id);
         }
         public int AddPost(Post p)
         {
             ctx.Posts.Add(p);
             return ctx.SaveChanges();
         }
+        public void ReplyToPost(Post inResponseTo, Post response)
+        {
+            if(inResponseTo.IsOriginalPost)
+            {
+                inResponseTo.Responses.Append(response);
+                response.InResponseTo = inResponseTo;
+                response.OriginalPost = inResponseTo;
+            }
+            else
+            {
+                inResponseTo.Responses.Append(response);
+                response.InResponseTo = inResponseTo;
+                response.OriginalPost = inResponseTo.OriginalPost;
+            }
+            AddPost(response);
+            UpdatePost(inResponseTo.PostId);
+        }
 
         public int DeletePost(int id)
         {
-            throw new NotImplementedException();
+            Post p = GetById(id);
+            if(p != null)
+            {
+                ctx.Remove(p);
+                return ctx.SaveChanges();
+            }
+            return 0;
         }
 
         public int UpdatePost(int id)
         {
-            throw new NotImplementedException();
+            Post post = GetById(id);
+            if (post != null)
+            {
+                //Moyen efficace de remplacer les valeurs de l'objet en DB par celles de l'objet reçu.
+                ctx.Entry(post).CurrentValues.SetValues(post);
+                return ctx.SaveChanges();
+            }
+            return 0;
         }
         public int LikePost(Post post, User user)
         {
@@ -50,32 +77,63 @@ namespace SocialNetwork.Data.Repository
 
         public int DislikePost(Post post, User user)
         {
-            return LikeOrDislike(post, user, true);
+            return LikeOrDislike(post, user, false);
         }
+        //Retourne le nombre de like gagné ou perdu
         private int LikeOrDislike(Post post, User user, bool like)
         {
-            PostLike newPl = new PostLike
-            {
-                User = user,
-                UserId = user.UserId,
-                Post = post,
-                PostId = post.PostId,
-                Like = like
-            };
-            PostLike postLike = ctx.PostLike.FirstOrDefault(pl => pl.UserId == post.Poster.UserId && pl.UserId == user.UserId);
+            int likeOp = 0;
+            PostLike postLike = ctx.PostLike.FirstOrDefault(pl => pl.UserId == user.UserId && pl.PostId == post.PostId);
             if (postLike != null)
             {
                 if (postLike.Like != like)
                 {
-                    ctx.PostLike.Add(newPl);
+                    postLike.Like = like;
+                    ctx.Entry(postLike).CurrentValues.SetValues(postLike);
+                    if (postLike.Like == true)
+                    {
+                        likeOp = 2;
+                    }
+                    else
+                    {
+                        likeOp = -2;
+                    }
                 }
-                ctx.PostLike.Remove(postLike);
+                else
+                {
+                    ctx.PostLike.Remove(postLike);
+                    if (postLike.Like == true)
+                    {
+                        likeOp = -1;
+                    }
+                    else
+                    {
+                        likeOp = 1;
+                    }
+                }
             }
             else
             {
+                PostLike newPl = new PostLike
+                {
+                    User = user,
+                    UserId = user.UserId,
+                    Post = post,
+                    PostId = post.PostId,
+                    Like = like
+                };
                 ctx.PostLike.Add(newPl);
+                if(newPl.Like == true)
+                {
+                    likeOp = 1;
+                }
+                else
+                {
+                    likeOp = -1;
+                }
             }
-            return ctx.SaveChanges();
+            ctx.SaveChanges();
+            return likeOp;
         }
 
     }

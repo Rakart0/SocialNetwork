@@ -11,8 +11,7 @@ namespace SocialNetwork.Data.Models
     {
         [Key]
         public int StatusID { get; set; }
-
-
+        
         [Required]
         [MaxLength]
         public string StatusContent { get; set; }

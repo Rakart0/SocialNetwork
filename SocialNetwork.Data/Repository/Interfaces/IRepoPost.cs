@@ -11,6 +11,7 @@ namespace SocialNetwork.Data.Repository.Interfaces
         IEnumerable<Post> GetAll();
         Post GetById(int id);
         int AddPost(Post p);
+        void ReplyToPost(Post post, Post postResponse);
         int UpdatePost(int id);
         int DeletePost(int id);
         //
