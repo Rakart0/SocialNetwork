@@ -8065,12 +8065,11 @@
       ]
     },
     "Newtonsoft.Json/11.0.2": {
-      "sha512": "znZGbws7E4BA9jxNZ7FuiIRI3C9hrgatVQSTKhIYZYNOud4M5VfGlTYi6RdYO5sQrebFuF/g9UEV3hOxDMXF6Q==",
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "type": "package",
       "path": "newtonsoft.json/11.0.2",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -10193,12 +10192,11 @@
       ]
     },
     "System.Net.Http/4.3.0": {
-      "sha512": "Z1UfSF6dlpCdZdxh6LeoGlYH+q6ptG/iiIWgUUeKhE3DbQACmZkU7Sz2nOX0qdHjz72MOdYRbkSJ5Qwl6sZgvg==",
+      "sha512": "sYg+FtILtRQuYWSIAuNOELwVuVsxVyJGWQyOnlAzhV4xvhyFnON1bAzYYC+jjRW8JREM45R0R5Dgi8MTC5sEwA==",
       "type": "package",
       "path": "system.net.http/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/Xamarinmac20/_._",
@@ -12965,23 +12963,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rakar\\.nuget\\packages\\": {},
+    "C:\\Users\\studentdot0408\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
+      "projectUniqueName": "D:\\GitHub\\SocialNetwork\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
       "projectName": "Socialnetwork.Webclient",
-      "projectPath": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
-      "packagesPath": "C:\\Users\\rakar\\.nuget\\packages\\",
-      "outputPath": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\Socialnetwork.Webclient\\obj\\",
+      "projectPath": "D:\\GitHub\\SocialNetwork\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
+      "packagesPath": "C:\\Users\\studentdot0408\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub\\SocialNetwork\\SocialNetwork\\Socialnetwork.Webclient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\rakar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\studentdot0408\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12994,8 +12992,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj": {
-              "projectPath": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj"
+            "D:\\GitHub\\SocialNetwork\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj": {
+              "projectPath": "D:\\GitHub\\SocialNetwork\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj"
             }
           }
         }

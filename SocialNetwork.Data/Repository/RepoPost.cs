@@ -13,9 +13,9 @@ namespace SocialNetwork.Data.Repository
         ApplicationDbContext ctx;
 
         public RepoPost(ApplicationDbContext _context)
-        {
+            {
             ctx = _context;
-        }
+            }
         public IEnumerable<Post> GetAll()
         {
             return ctx.Posts;

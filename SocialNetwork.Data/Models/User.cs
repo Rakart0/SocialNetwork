@@ -31,7 +31,7 @@ namespace SocialNetwork.Data.Models
 
         public IEnumerable<Group> SubscribedGroups { get; set; }
 
-        public IEnumerable<Post> Posts { get; set; }
+        public IEnumerable<GroupPost> Posts { get; set; }
 
         public IEnumerable<PostLike> LikedPosts { get; set; }
         public IEnumerable<TaggedUserPost> TaggedPosts { get; set; }

@@ -12,3 +12,17 @@ D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcore
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CopyComplete
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.dll
 D:\Work\Progra\C#\Technifutur\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csprojAssemblyReference.cache
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CoreCompileInputs.cache
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfoInputs.cache
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.AssemblyInfo.cs
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.deps.json
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.json
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.runtimeconfig.dev.json
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.dll
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\SocialNetwork.Data.pdb
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.csproj.CopyComplete
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.dll
+D:\GitHub\SocialNetwork\SocialNetwork\SocialNetwork.Data\obj\Debug\netcoreapp2.2\SocialNetwork.Data.pdb

@@ -3720,23 +3720,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rakar\\.nuget\\packages\\": {},
+    "C:\\Users\\studentdot0408\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj",
+      "projectUniqueName": "D:\\GitHub\\SocialNetwork\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj",
       "projectName": "SocialNetwork.Data",
-      "projectPath": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj",
-      "packagesPath": "C:\\Users\\rakar\\.nuget\\packages\\",
-      "outputPath": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\SocialNetwork.Data\\obj\\",
+      "projectPath": "D:\\GitHub\\SocialNetwork\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj",
+      "packagesPath": "C:\\Users\\studentdot0408\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub\\SocialNetwork\\SocialNetwork\\SocialNetwork.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\rakar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\studentdot0408\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
