@@ -28,13 +28,9 @@ namespace SocialNetwork.Data.Models
 
         public virtual IEnumerable<FollowersFollowed> Following { get; set; }
         public virtual IEnumerable<FollowersFollowed> Followers { get; set; }
-        public ICollection<FollowersFollowed> Following { get; set; }
-        public ICollection<FollowersFollowed> Followers { get; set; }
 
         public virtual IEnumerable<Group> SubscribedGroups { get; set; }
-
         public virtual IEnumerable<Post> Posts { get; set; }
-        public IEnumerable<GroupPost> Posts { get; set; }
 
         public virtual IEnumerable<PostLike> LikedPosts { get; set; }
         public virtual IEnumerable<TaggedUserPost> TaggedPosts { get; set; }
