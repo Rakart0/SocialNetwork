@@ -26,15 +26,15 @@ namespace SocialNetwork.Data.Models
         public string Email { get; set; }
 
 
-        public IEnumerable<FollowersFollowed> Following { get; set; }
-        public IEnumerable<FollowersFollowed> Followers { get; set; }
+        public virtual IEnumerable<FollowersFollowed> Following { get; set; }
+        public virtual IEnumerable<FollowersFollowed> Followers { get; set; }
 
-        public IEnumerable<Group> SubscribedGroups { get; set; }
+        public virtual IEnumerable<Group> SubscribedGroups { get; set; }
 
-        public IEnumerable<Post> Posts { get; set; }
+        public virtual IEnumerable<Post> Posts { get; set; }
 
-        public IEnumerable<PostLike> LikedPosts { get; set; }
-        public IEnumerable<TaggedUserPost> TaggedPosts { get; set; }
+        public virtual IEnumerable<PostLike> LikedPosts { get; set; }
+        public virtual IEnumerable<TaggedUserPost> TaggedPosts { get; set; }
 
         [DataType(DataType.Url)]
         public string UserPictureUrl { get; set; }

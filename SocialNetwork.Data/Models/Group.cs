@@ -14,13 +14,13 @@ namespace SocialNetwork.Data.Models
         [Required]
         [StringLength(50, MinimumLength =3)]
         public string GroupName { get; set; }
-        public IEnumerable<GroupPost>  Posts {get; set;}
+        public virtual IEnumerable<GroupPost>  Posts {get; set;}
         //public int AdminId { get; set; }
         //[Required]
         //[ForeignKey("UserId")]
-        public User Admin { get; set; }
-        public IEnumerable<User> Moderators { get; set; }
-        public Post AnnouncedPost { get; set; }
+        public virtual User Admin { get; set; }
+        public virtual IEnumerable<User> Moderators { get; set; }
+        public virtual Post AnnouncedPost { get; set; }
 
 
     }

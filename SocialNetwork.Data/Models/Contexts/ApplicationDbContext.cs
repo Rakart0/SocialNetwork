@@ -20,6 +20,7 @@ namespace Socialnetwork.Webclient.Data
         public DbSet<HashtagPost> HashtagPost { get; set; }
         public DbSet<PostLike> PostLike { get; set; }
         public DbSet<TaggedUserPost> TaggedUserPosts { get; set; }
+        public DbSet<PostImage> PostImages { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -38,13 +39,13 @@ namespace Socialnetwork.Webclient.Data
                 .HasOne(fwr => fwr.Follower)
                 .WithMany(f => f.Following)
                 .HasForeignKey(fk => fk.FollowerId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<FollowersFollowed>()
                 .HasOne(fwd => fwd.Followed)
                 .WithMany(f => f.Followers)
                 .HasForeignKey(fk => fk.FollowedId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
 
             modelBuilder.Entity<GroupPost>()
@@ -111,6 +112,13 @@ namespace Socialnetwork.Webclient.Data
             modelBuilder.Entity<Post>()
                 .HasMany(p => p.Responses)
                 .WithOne(r => r.InResponseTo);
+
+            modelBuilder.Entity<PostImage>()
+                .HasKey(u => u.Url);
+            modelBuilder.Entity<PostImage>()
+                .HasOne(p => p.Post);
+                
+                
 
 
 

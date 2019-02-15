@@ -7,7 +7,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Socialnetwork.Webclient.Controllers.Converters;
+using Socialnetwork.Webclient.Helpers;
+using Socialnetwork.Webclient.Models;
 using SocialNetwork.Data.Models;
 using SocialNetwork.Data.Models.IdentityModels;
 using SocialNetwork.Data.Repository.Interfaces;
@@ -27,20 +30,16 @@ namespace Socialnetwork.Webclient.Controllers
             repoU = _repoU;
         }
         // GET: Post
-        public ActionResult Index()
+        [HttpGet]
+        public IActionResult Index()
         {
-            return View(repoP.GetAll().ToUi());
-        }
-
-        // GET: Post/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
+            return View(repoP.GetAll().Where(p => p.IsOriginalPost == true).ToThumbnail().OrderByDescending(p => p.PostTime));
         }
 
         // GET: Post/Create
+        [HttpGet]
         [Authorize]
-        public ActionResult Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -48,83 +47,65 @@ namespace Socialnetwork.Webclient.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create(Post p)
+        public IActionResult Create(Post post)
         {
             try
             {
                 if (User.Identity.IsAuthenticated)
                 {
-                    p.PostTime = DateTime.Now;
-                    p.IsOriginalPost = true;
-                    p.Poster = repoU.GetById(GetId());
-                    repoP.AddPost(p);
+                    post.PostTime = DateTime.Now;
+                    post.IsOriginalPost = true;
+                    post.Poster = repoU.GetById(ControllerHelper.GetUserId(User));
+                    repoP.AddPost(post);
                 }
-                return View("Index", repoP.GetAll().ToUi());
+                return View(nameof(Index));
             }
             catch
             {
                 return View();
             }
         }
-        // POST: Post/Like
         [Authorize]
-        public ActionResult Like(int postId)
+        public IActionResult Like(int postId)
         {
             try
             {
+                int likeOp = 0;
                 if (User.Identity.IsAuthenticated)
                 {
                     Post post = repoP.GetById(postId);
-                    User user = repoU.GetById(GetId());
-                    repoP.LikePost(post, user);
+                    User user = repoU.GetById(ControllerHelper.GetUserId(User));
+                    likeOp = repoP.LikePost(post, user);
                 }
-                return RedirectToAction("Index", repoP.GetAll().ToUi());
+                return Json(new { id = postId, likeOperation = likeOp });
             }
             catch
             {
-                return View();
+                return Json("Erreur dans la méthode Like du controller RecentPosts");
             }
         }
-        // POST: Post/Dislike
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Dislike(int postId)
+        public IActionResult Dislike(int postId)
         {
             try
             {
+                int likeOp = 0;
                 if (User.Identity.IsAuthenticated)
                 {
                     Post post = repoP.GetById(postId);
-                    User user = repoU.GetById(GetId());
-                    repoP.DislikePost(post, user);
+                    User user = repoU.GetById(ControllerHelper.GetUserId(User));
+                    likeOp = repoP.DislikePost(post, user);
                 }
-                return RedirectToAction("Index", repoP.GetAll().ToUi());
-                //return View("Index", repoP.GetAll().ToUi());
+                return Json(new { id = postId, likeOperation = likeOp });
             }
             catch
             {
                 return View();
             }
-        }
-        public string GetId()
-        {
-            var claimsIdentity = User.Identity as ClaimsIdentity;
-            if (claimsIdentity != null)
-            {
-                var userIdClaim = claimsIdentity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
-
-                if (userIdClaim != null)
-                {
-                    var userIdValue = userIdClaim.Value;
-                    return userIdValue;
-                }
-            }
-            return null;
         }
 
         // GET: Post/Edit/5
-        public ActionResult Edit(int id)
+        public IActionResult Edit(int id)
         {
             return View();
         }
@@ -132,12 +113,12 @@ namespace Socialnetwork.Webclient.Controllers
         // POST: Post/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public IActionResult Edit(int id, IFormCollection collection)
         {
             try
             {
                 // TODO: Add update logic here
-
+                repoP.UpdatePost(id);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -147,7 +128,7 @@ namespace Socialnetwork.Webclient.Controllers
         }
 
         // GET: Post/Delete/5
-        public ActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             return View();
         }
@@ -155,13 +136,54 @@ namespace Socialnetwork.Webclient.Controllers
         // POST: Post/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public IActionResult Delete(int id, IFormCollection collection)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                repoP.DeletePost(id);
                 return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        public IActionResult Post(int postId)
+        {
+            return View(repoP.GetById(postId).ToPostViewModel());
+        }
+        [HttpGet]
+        [Authorize]
+        public IActionResult Reply(int postId)
+        {
+            return View(repoP.GetById(postId).ToReplyViewModel());
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        [Route("/RecentPosts/Reply/", Name = "inResponseId")]
+        public IActionResult Reply(int inResponseToId, ReplyViewModel rvm)
+        {
+            try
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+                    Post response = new Post();
+                    response.PostContent = rvm.PostContent;
+                    response.PostTime = DateTime.Now;
+                    response.IsOriginalPost = false;
+                    response.Poster = repoU.GetById(ControllerHelper.GetUserId(User));
+                    Post inResponseTo = repoP.GetById(inResponseToId);
+
+                    repoP.ReplyToPost(inResponseTo, response);
+                    if(inResponseTo.IsOriginalPost == true)
+                    {
+                        return RedirectToAction(nameof(Post), inResponseTo.OriginalPost.PostId);
+                    }
+                    return RedirectToAction(nameof(Post), inResponseTo);
+                }
+                return View();
             }
             catch
             {

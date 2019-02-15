@@ -17,16 +17,15 @@ namespace SocialNetwork.Data.Models
         public string PostContent { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime PostTime { get; set; }
-        public IEnumerable<HashtagPost> Hashtag { get; set; }
-        public IEnumerable<PostLike> Likes { get; set; }
-        public IEnumerable<TaggedUserPost> TaggedPeople { get; set; }
-        public IEnumerable<GroupPost> TaggedGroups { get; set; }
-        public IEnumerable<Post> Responses { get; set; }
+        public virtual IEnumerable<HashtagPost> Hashtag { get; set; }
+        public virtual IEnumerable<PostLike> Likes { get; set; }
+        public virtual IEnumerable<TaggedUserPost> TaggedPeople { get; set; }
+        public virtual IEnumerable<GroupPost> TaggedGroups { get; set; }
+        public virtual IEnumerable<Post> Responses { get; set; }
         public bool IsOriginalPost { get; set; }
-        public Post OriginalPost { get; set; }
-        public Post InResponseTo { get; set; }
-        public User Poster { get; set; }
-        //Todo
-        //public string Image { get; set; }
+        public virtual Post OriginalPost { get; set; }
+        public virtual Post InResponseTo { get; set; }
+        public virtual User Poster { get; set; }
+        public virtual IEnumerable<PostImage> Images{ get; set;}
     }
 }

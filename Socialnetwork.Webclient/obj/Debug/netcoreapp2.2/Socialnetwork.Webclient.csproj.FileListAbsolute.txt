@@ -238,3 +238,8 @@ C:\devnet2018_tristan\GitHub Projects\SocialNetwork\Socialnetwork.Webclient\obj\
 C:\devnet2018_tristan\GitHub Projects\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Socialnetwork.Webclient.dll
 C:\devnet2018_tristan\GitHub Projects\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Socialnetwork.Webclient.pdb
 C:\devnet2018_tristan\GitHub Projects\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Index.g.cshtml.cs
+C:\devnet2018_tristan\GitHub Projects\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Create.g.cshtml.cs
+C:\devnet2018_tristan\GitHub Projects\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Edit.g.cshtml.cs
+C:\devnet2018_tristan\GitHub Projects\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Delete.g.cshtml.cs
+C:\devnet2018_tristan\GitHub Projects\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Post.g.cshtml.cs
+C:\devnet2018_tristan\GitHub Projects\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Reply.g.cshtml.cs

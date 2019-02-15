@@ -1,0 +1,32 @@
+﻿@model Socialnetwork.Webclient.Models.PostViewModel
+
+@{
+    ViewData["Title"] = "Post";
+}
+
+<h1>Post</h1>
+
+@Html.ActionLink("Reply", "Reply", new { postId = Model.PostId })
+<div background-color="red">
+    <h3>@Model.PosterName</h3><span>@Model.PostTime</span>
+    <div>@Model.PostContent</div>
+</div>
+@foreach (var item in Model.Responses)
+{
+    <div left="50px" background-color="green">
+        @Html.ActionLink("Reply", "Reply", new { postId = item.PostId })
+        <h3>@item.PosterName</h3><span>@item.PostTime</span>
+        <div>In response to @Model.PosterName</div>
+        <div>@item.PostContent</div>
+    </div>
+    @if(item.FirstResponse != null)
+    {
+        <div left="50px" background-color="green">
+            @Html.ActionLink("Reply", "Reply", new { postId = item.FirstResponse.PostId })
+            <h3>@item.FirstResponse.PosterName</h3><span>@item.FirstResponse.PostTime</span>
+            <div>In response to @item.PosterName</div>
+            <div>@item.FirstResponse.PostContent</div>
+        </div>
+    }
+
+}

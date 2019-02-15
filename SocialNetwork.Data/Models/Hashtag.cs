@@ -8,6 +8,6 @@ namespace SocialNetwork.Data.Models
     {
         public int HashtagId { get; set; }
         public string HashtagName { get; set; }
-        public IEnumerable<HashtagPost> Posts { get; set; }
+        public virtual IEnumerable<HashtagPost> Posts { get; set; }
     }
 }
