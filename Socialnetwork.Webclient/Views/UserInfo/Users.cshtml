@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Socialnetwork.Webclient.Models.UserFollowViewModel>
-
 @{
     ViewData["Title"] = "Users";
 }
 
 <h1>Users</h1>
+<input type="button" id="btnGet" value="Get Current Time" />
 
 <p>
 
@@ -19,13 +19,14 @@
                 @Html.DisplayNameFor(model => model.email)
             </th>
             <th>
-                
+
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.UserName)
@@ -33,32 +34,108 @@
             <td>
                 @Html.DisplayFor(modelItem => item.email)
             </td>
-            
+
             @if (User.Identity.IsAuthenticated)
             {
+
             <td>
                 @if (item.isFollowedByLoggedUser == false)
                 {
-                    @Html.ActionLink("Follow", "Follow", new { id = item.userId })
+                    <input type="button" class="FollowButton" value="Follow"
+                           Var1="@item.userId">
+
+
                 }
                 else
-                {    
-                    @Html.ActionLink("Unfollow", "Unfollow", new { id = item.userId })
+                {
+                    <input type="button" class="FollowButton" value="Unfollow"
+                           Var1="@item.userId">
                 }
 
             </td>
-            <td>
-                @if (item.isFollowingLoggedUser == true)
-                {
-                    <p>Is following you</p>
-                }
-                else
-                {
-                    <p>Is not  following you</p>
-                }
-            </td>
+                <td>
+                    @if (item.isFollowingLoggedUser == true)
+                    {
+                        <p>Is following you</p>
+                    }
+                    else
+                    {
+                        <p>Is not  following you</p>
+                    }
+                </td>
             }
-            </tr>
-}
+                <td>
+
+                </td>
+        </tr>
+        }
+
+
+
+
     </tbody>
 </table>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        $(document).on('click', '.FollowButton', function () {
+            var buttonref = $(this);
+            var userId = buttonref.attr('Var1');
+
+            let requesturl;
+           
+            if (buttonref.val() == 'Unfollow') {
+                 requesturl = '/UserInfo/RemoveFollow/' + userId
+            }
+            else {
+                 requesturl = '/UserInfo/AddFollow/' + userId
+            }
+
+            //alert(FuncParam1);
+
+            $.ajax({
+                url: requesturl,
+                dataType: "json",
+                type: "GET",
+                contentType: 'application/json; charset=utf-8',
+                async: true,
+                cache: false,
+                success: function (data) {
+                    if (buttonref.val() == 'Follow') {
+                        buttonref.val('Unfollow');
+                    }
+                    else {
+                        buttonref.val('Follow');
+                    }
+                    
+                },
+                error: function (xhr) {
+                    alert('error');
+                }
+            });
+
+        });
+
+        $("#btnGet").click(function () {
+            $("#btnGet").val('J4EN VEUX SACHA');
+        });
+    });
+</script>
+@*$.ajax({
+                type: "GET",
+                url: "/UserInfo/AjaxMethod",
+                //data: '{name: "' + $("#txtName").val() + '" }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    alert("Hello: " + response.Name );
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });*@

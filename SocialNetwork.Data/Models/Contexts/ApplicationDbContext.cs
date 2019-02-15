@@ -38,13 +38,13 @@ namespace Socialnetwork.Webclient.Data
                 .HasOne(fwr => fwr.Follower)
                 .WithMany(f => f.Following)
                 .HasForeignKey(fk => fk.FollowerId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<FollowersFollowed>()
                 .HasOne(fwd => fwd.Followed)
                 .WithMany(f => f.Followers)
                 .HasForeignKey(fk => fk.FollowedId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
 
             modelBuilder.Entity<GroupPost>()
@@ -59,6 +59,7 @@ namespace Socialnetwork.Webclient.Data
                 .HasOne(p => p.Post)
                 .WithMany(g => g.TaggedGroups)
                 .HasForeignKey(fk => fk.PostId);
+           
 
             modelBuilder.Entity<User>()
                 .HasMany(u => u.SubscribedGroups)

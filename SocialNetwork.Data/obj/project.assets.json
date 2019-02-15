@@ -2687,7 +2687,7 @@
       ]
     },
     "System.Memory/4.5.1": {
-      "sha512": "vcG3/MbfpxznMkkkaAblJi7RHOmuP7kawQMhDgLSuA1tRpRQYsFSCTxRSINDUgn2QNn2jWeLxv8er5BXbyACkw==",
+      "sha512": "sDJYJpGtTgx+23Ayu5euxG5mAXWdkDb4+b0rD0Cab0M1oQS9H0HXGPriKcqpXuiJDTV7fTp/d+fMDJmnr6sNvA==",
       "type": "package",
       "path": "system.memory/4.5.1",
       "files": [
@@ -3268,7 +3268,7 @@
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.5.1": {
-      "sha512": "qUJMNWhbm9oZ3XaMFiEMiYmRPszbnXIkRIi7+4b2Md2xZ6JUOepf0/kY3S85qistRohl9OdMe4PsO+RdG2kTIQ==",
+      "sha512": "Zh8t8oqolRaFa9vmOZfdQm/qKejdqz0J9kr7o2Fu0vPeoH3BL1EOXipKWwkWtLT1JPzjByrF19fGuFlNbmPpiw==",
       "type": "package",
       "path": "system.runtime.compilerservices.unsafe/4.5.1",
       "files": [
@@ -3720,23 +3720,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rakar\\.nuget\\packages\\": {},
+    "C:\\Users\\studentdot0403\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj",
+      "projectUniqueName": "C:\\DevNet_2018\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj",
       "projectName": "SocialNetwork.Data",
-      "projectPath": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj",
-      "packagesPath": "C:\\Users\\rakar\\.nuget\\packages\\",
-      "outputPath": "D:\\Work\\Progra\\C#\\Technifutur\\SocialNetwork\\SocialNetwork.Data\\obj\\",
+      "projectPath": "C:\\DevNet_2018\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj",
+      "packagesPath": "C:\\Users\\studentdot0403\\.nuget\\packages\\",
+      "outputPath": "C:\\DevNet_2018\\SocialNetwork\\SocialNetwork.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\rakar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\studentdot0403\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
