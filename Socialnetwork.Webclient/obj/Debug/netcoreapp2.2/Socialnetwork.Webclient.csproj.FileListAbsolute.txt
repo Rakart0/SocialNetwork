@@ -143,3 +143,4 @@ C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Soc
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Socialnetwork.Webclient.csproj.CopyComplete
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Socialnetwork.Webclient.dll
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Socialnetwork.Webclient.pdb
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Login\Signin.g.cshtml.cs

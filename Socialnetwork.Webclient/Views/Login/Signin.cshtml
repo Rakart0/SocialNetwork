@@ -1,0 +1,137 @@
+﻿@model Socialnetwork.Webclient.Models.AuthViewModel;
+@{
+    ViewData["Title"] = "Signin";
+    //Layout = "";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400" rel="stylesheet">
+  
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="loginCont">
+        <div class="registerBox">
+            <div class="registerForm">
+
+                <div class="forminput">
+                    <span class="formLbl">Email</span> <br>
+                    <input type="text">
+                </div>
+                <div class="forminput">
+                    <span class="formLbl">Password</span> <br>
+                    <input type="password">
+                </div>
+            </div>
+            <button type="submit" class="valbtn">Sign in</button>
+        </div>
+        <div class="registerbtn">
+            Don't have an account ?<br>
+            <button type="submit" class="switchbtn" id="switchbtn2">
+                Register
+
+            </button>
+
+        </div>
+    </div>
+
+
+    <div id="registerCont">
+
+        @using (Html.BeginForm("RegisterAsync", "Login", FormMethod.Post))
+        {
+            <div class="registerBox" id="regbox">
+                <div class="registerForm">
+                    <div class="forminput">
+                        <span class="formLbl">Username</span> <br>
+                        @*<input type="text" name="UserName" id="UserName">*@
+                        @Html.EditorFor(model => model.UserName)
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+
+
+                    </div>
+                    <div class="forminput">
+                        <span class="formLbl">Email</span> <br>
+                        @*//<input type="text" name="Email" id="Email">*@
+                        @Html.EditorFor(model => model.Email)
+                        <span asp-validation-for="Email" class="text-danger"></span>
+
+
+                    </div>
+                    <div class="forminput">
+                        <span class="formLbl">Password</span> <br>
+                        @*<input type="password" name="Password" id="Password">*@
+                        @Html.EditorFor(model => model.Password)
+                        <span asp-validation-for="Password" class="text-danger"></span>
+
+
+                    </div>
+                    <div class="forminput">
+                        <span class="formLbl">Confirm password</span> <br>
+                        @Html.EditorFor(model => model.ConfirmPassword)
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <button type="submit" class="valbtn">Sign up</button>
+            </div>
+        };
+
+        <div class="registerbtn">
+            Already have an account ?<br>
+            <button type="submit" class="switchbtn" id="switchbtn">
+                Sign in
+
+            </button>
+
+        </div>
+
+    </div>
+    <div id="quoteoftheday">"Mangez des pommes"<br> <span id="quoteAuthor">Jacques Chirac</span></div>
+
+  
+    <script>
+
+        $(document).ready(function () {
+
+            $("#loginCont").hide();
+
+            $("#switchbtn").click(function () {
+
+                $("#quoteoftheday").css({
+                    "float": "left",
+                    "text-align": "left"
+                });
+                $("#registerCont").hide('blind', { direction: 'right' }, "fast");
+                $("#loginCont").show('blind', { direction: 'left' }, "fast");
+
+            });
+
+            $("#switchbtn2").click(function () {
+
+                $("#quoteoftheday").css({
+                    "float": "right",
+                    "text-align": "right"
+                });
+                $("#loginCont").hide('blind', { direction: 'left' }, "fast");
+                $("#registerCont").show('blind', { direction: 'right' }, "fast");
+
+            });
+
+        });
+
+    </script>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+</body>
+
+
+</html>

@@ -1,0 +1,128 @@
+﻿body {
+    background: linear-gradient(to right, #E9786B 66%, #E9896B);
+}
+
+#registerCont {
+    margin-top: 23vh;
+    width: 35vw;
+    float: right;
+    margin-right: 7vw;
+}
+
+#loginCont {
+    margin-top: 23vh;
+    width: 35vw;
+    float: left;
+    margin-left: 7vw;
+}
+
+.registerBox {
+    background-color: white;
+    border-radius: 30px;
+    padding-bottom: 25px;
+}
+
+
+
+#quoteoftheday {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 4vw;
+    width: 35vw;
+    float: right;
+    color: white;
+    margin-top: 23vh;
+    text-align: right;
+    margin-left: 7vh;
+    margin-right: 7vh;
+}
+
+#quoteAuthor {
+    font-size: 2.75vw;
+}
+
+.registerbtn {
+    text-align: center;
+    margin: auto;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 1.25vw;
+    color: white;
+    margin-top: 4vh;
+}
+
+.switchbtn {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25vw;
+    color: #E9786B;
+    font-weight: 300;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5648614px;
+    margin-top: 10px;
+    background-color: white;
+    transition: 0.1s;
+}
+
+    .switchbtn:hover {
+        background-color: rgb(189, 103, 93);
+        color: white;
+        transition: 0.1s;
+    }
+
+    .switchbtn:active {
+        background-color: rgb(128, 64, 57)
+    }
+
+.formLbl {
+    margin-left: 10%;
+}
+
+.registerForm {
+    margin-top: 6vh;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+
+.forminput {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    color: #E9786B;
+    font-size: 1.25vw;
+    list-style: none;
+}
+
+.valbtn {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5vw;
+    color: white;
+    font-weight: 300;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5648614px;
+    background-color: #E9786B;
+    transition: 0.1s;
+    display: block;
+    margin: auto;
+}
+
+    .valbtn:hover {
+        background-color: rgb(202, 99, 87);
+    }
+
+.forminput input {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 1.2vw;
+    color: #B8A2A0;
+    width: 75%;
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: #E9786B 2px solid;
+}
