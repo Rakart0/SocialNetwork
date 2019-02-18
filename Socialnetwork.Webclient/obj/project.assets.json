@@ -6433,7 +6433,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/2.2.1": {
-      "sha512": "vVTwPmR6671ykE2nAWCPgeADLVVradKPF3Apl9aP8fu0hPLddWIhkDH5ghL/EdvMQdIMqR3ccRJ+E8MQPLjutg==",
+      "sha512": "yfsnjccSBIyWQuHg+zd2PxRoXNuRhC0T4jgtk5IjhToZ5TZMeAWjrhUbKjDG0Kth1IcND/i4ovOw7YplfKQt7A==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.relational/2.2.1",
       "files": [
@@ -6446,7 +6446,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.SqlServer/2.2.1": {
-      "sha512": "gNd/3tkmTgUvyItVvWHbioHMuzK6kEZpqWzZU/7cS+OiydzPGGks//s5BlJWLfWPX5DmbN/uweu0Yr5EpY4sFA==",
+      "sha512": "V58e2CI2eunGMUy+i7+S6JtyyVIb4DKCxYi8xf8Qz3r6RD7MliKBRfudiYm8I7aUqUmZsHOGXaOiPyb5diXnqg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.sqlserver/2.2.1",
       "files": [
@@ -10957,7 +10957,6 @@
       "path": "system.reflection.emit.ilgeneration/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13301,39 +13300,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\studentdot0403\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\studentdot0410\\.nuget\\packages\\": {},
->>>>>>> 084906a20625667d73ec6c7928c92b72ba46141b
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\DevNet_2018\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
       "projectName": "Socialnetwork.Webclient",
       "projectPath": "C:\\DevNet_2018\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
       "packagesPath": "C:\\Users\\studentdot0403\\.nuget\\packages\\",
       "outputPath": "C:\\DevNet_2018\\SocialNetwork\\Socialnetwork.Webclient\\obj\\",
-=======
-      "projectUniqueName": "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
-      "projectName": "Socialnetwork.Webclient",
-      "projectPath": "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\Socialnetwork.Webclient\\Socialnetwork.Webclient.csproj",
-      "packagesPath": "C:\\Users\\studentdot0410\\.nuget\\packages\\",
-      "outputPath": "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\Socialnetwork.Webclient\\obj\\",
->>>>>>> 084906a20625667d73ec6c7928c92b72ba46141b
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\studentdot0403\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\studentdot0410\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 084906a20625667d73ec6c7928c92b72ba46141b
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13346,13 +13329,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-<<<<<<< HEAD
             "C:\\DevNet_2018\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj": {
               "projectPath": "C:\\DevNet_2018\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj"
-=======
-            "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj": {
-              "projectPath": "C:\\devnet2018_tristan\\GitHub Projects\\SocialNetwork\\SocialNetwork.Data\\SocialNetwork.Data.csproj"
->>>>>>> 084906a20625667d73ec6c7928c92b72ba46141b
             }
           }
         }

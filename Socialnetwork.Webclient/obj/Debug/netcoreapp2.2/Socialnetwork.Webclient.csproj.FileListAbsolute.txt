@@ -122,7 +122,12 @@ C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Raz
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Create.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Delete.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Edit.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Index.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Post.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Reply.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
