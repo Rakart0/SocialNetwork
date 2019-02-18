@@ -1,7 +1,7 @@
 ﻿@model Socialnetwork.Webclient.Models.AuthViewModel;
 @{
     ViewData["Title"] = "Signin";
-    //Layout = "";
+    Layout = "";
 }
 
 <!DOCTYPE html>
@@ -96,7 +96,11 @@
     </div>
     <div id="quoteoftheday">"Mangez des pommes"<br> <span id="quoteAuthor">Jacques Chirac</span></div>
 
-  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
     <script>
 
         $(document).ready(function () {
@@ -126,11 +130,8 @@
             });
 
         });
-
-    </script>
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+        </script>
+  
 </body>
 
 
