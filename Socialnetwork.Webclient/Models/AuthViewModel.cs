@@ -32,8 +32,13 @@ namespace Socialnetwork.Webclient.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-        
 
-       
+        [Required]
+        [DataType(DataType.Password)]
+        public string LogPassword { get; set; }
+
+        public bool RememberUser { get; set; }
+
+
     }
 }

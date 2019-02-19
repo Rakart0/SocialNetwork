@@ -18,20 +18,31 @@
 <body>
 
     <div id="loginCont">
-        <div class="registerBox">
-            <div class="registerForm">
+        @using (Html.BeginForm("LoginAsync", "Login", FormMethod.Post)){
+            <div class="registerBox">
+                <div class="registerForm">
 
-                <div class="forminput">
-                    <span class="formLbl">Email</span> <br>
-                    <input type="text">
+                    <div class="forminput">
+                        <span class="formLbl">Username</span> <br>
+                        @*<input type="text">*@
+                        @Html.EditorFor(model => model.UserName)
+
+                    </div>
+                    <div class="forminput">
+                        <span class="formLbl">Password</span> <br>
+                        @*<input type="password">*@
+                        @Html.EditorFor(model => model.LogPassword)
+
+                    </div>
+                    <div id="rememberUser">
+                        <input asp-for="RememberUser" id="chckmark" />
+                        @*<input type="checkbox" id="chckmark">*@
+                        <span id="rememberme">Remember me</span>
+                    </div>
                 </div>
-                <div class="forminput">
-                    <span class="formLbl">Password</span> <br>
-                    <input type="password">
-                </div>
+                <button type="submit" class="valbtn">Sign in</button>
             </div>
-            <button type="submit" class="valbtn">Sign in</button>
-        </div>
+        };
         <div class="registerbtn">
             Don't have an account ?<br>
             <button type="submit" class="switchbtn" id="switchbtn2">

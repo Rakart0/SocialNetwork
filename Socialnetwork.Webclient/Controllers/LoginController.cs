@@ -33,14 +33,28 @@ namespace Socialnetwork.Webclient.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                //return acceuil
+                return Redirect("../Home/index");
 
             }
             else
             {
                 return View("signin");
             }
-            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> LoginAsync(AuthViewModel authViewModel)
+        {
+            var p = authViewModel;
+
+            var result = await signInManager.PasswordSignInAsync(authViewModel.UserName, authViewModel.LogPassword, authViewModel.RememberUser, lockoutOnFailure: true);
+
+            
+            if (result.Succeeded)
+            {
+                return Redirect("../Home/index");
+            }
+            return View("signin");
         }
 
         [HttpPost]

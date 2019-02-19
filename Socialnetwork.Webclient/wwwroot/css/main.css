@@ -22,6 +22,63 @@
     padding-bottom: 25px;
 }
 
+.registerBox {
+    background-color: white;
+    border-radius: 30px;
+    padding-bottom: 25px;
+}
+
+#rememberme {
+    position: absolute;
+}
+
+#chckmark {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    border: 2px solid rgb(114, 114, 114);
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    transition: all .2s ease;
+}
+
+    #chckmark:active {
+        border-radius: 10px;
+        transition: all .2s ease;
+    }
+
+    #chckmark:checked {
+        background-color: rgb(114, 114, 114);
+        transition: all .2s ease;
+    }
+
+
+#rememberUser {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-left: 10%;
+    color: #E9786B;
+    font-size: 1.25vw;
+}
+
+
+#quoteoftheday {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 4vw;
+    width: 35vw;
+    float: right;
+    color: white;
+    margin-top: 23vh;
+    text-align: right;
+    margin-left: 7vh;
+    margin-right: 7vh;
+}
+
 
 
 #quoteoftheday {
