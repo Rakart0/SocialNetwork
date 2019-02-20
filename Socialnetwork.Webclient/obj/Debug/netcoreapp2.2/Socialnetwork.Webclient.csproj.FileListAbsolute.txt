@@ -150,3 +150,5 @@ D:\Work\Progra\C#\Technifutur\SocialNetwork\Socialnetwork.Webclient\obj\Debug\ne
 D:\Work\Progra\C#\Technifutur\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Edit.g.cshtml.cs
 D:\Work\Progra\C#\Technifutur\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Post.g.cshtml.cs
 D:\Work\Progra\C#\Technifutur\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\RecentPosts\Reply.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DashboardPostPartial.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Home\Dashboard.g.cshtml.cs

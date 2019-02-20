@@ -60,13 +60,7 @@ namespace Socialnetwork.Webclient.Controllers
         [HttpPost]
         public async Task<IActionResult> RegisterAsync (AuthViewModel authViewModel)
         {
-
             
-            if (!ModelState.IsValid)
-            {
-                return View("signin",authViewModel);
-
-            }
 
             var userToRegister = new ApplicationUser
             {
@@ -78,7 +72,7 @@ namespace Socialnetwork.Webclient.Controllers
 
             if (result.Succeeded)
             {
-                var u = new User { UserName = userToRegister.UserName, ApplicationUser = userToRegister, Email = userToRegister.Email, UserPictureUrl = "www.google.be" };
+                var u = new User { UserName = userToRegister.UserName, ApplicationUser = userToRegister, Email = userToRegister.Email, UserPictureUrl = "http://chittagongit.com//images/default-user-icon/default-user-icon-8.jpg" };
                 repo.AddUser(u);
                 //_logger.LogInformation("User created a new account with password.");
 
@@ -93,7 +87,7 @@ namespace Socialnetwork.Webclient.Controllers
                 //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                 await signInManager.SignInAsync(userToRegister, isPersistent: false);
-                return LocalRedirect("Index");
+                return Redirect("../Home/index");
             }
 
 
