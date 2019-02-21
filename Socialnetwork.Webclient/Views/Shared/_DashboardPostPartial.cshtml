@@ -1,17 +1,17 @@
-﻿@model Socialnetwork.Webclient.Models.DashboardPostViewModel
+﻿@model ThumbnailPostViewModel
 
 @{
     ViewData["Title"] = "_DashboardPostPartial";
 }
 
 
-<div class="grid-container">
-    <div class="item1"><img src="https://pbs.twimg.com/profile_images/836195323643113472/VUS4xJxe_400x400.jpg"> <br> -120pt </div>
-    <div class="userinfo">Connardo <span>15/02/2018 15:34 </span> </div>
+<div class="grid-container @("post"+Model.PostId)">
+
+    <div class="item1"><img src="@Model.PosterImageUrl"> <br> @Model.Likes </div>
+    <div class="userinfo">@Model.PosterName <span>@Model.PostTime </span> </div>
     <div class="followbtn"><button>follow</button></div>
-    <div class="postcontent"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ullam dignissimos, corporis numquam ipsa cupiditate veniam praesentium quas nesciunt iusto tempore maiores? Tenetur maiores eum similique exercitationem corporis. Praesentium, hic.</div>
+    <div class="postcontent"> @Model.PostContent </div>
     <div class="empty"></div>
-    <div class="postinfo">Like Dislike Reply(0)</div>
+    <div class="postinfo">Like Dislike <a href="#" onclick="answer('@Model.PostId')">Comment</a> <a href="#" onclick="reply('@Model.PostId')">Hide</a> </div>
     <div class="empty"></div>
 </div>
-

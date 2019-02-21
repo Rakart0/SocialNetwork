@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<Socialnetwork.Webclient.Models.ThumbnailPostViewModel>
+
 @{
     ViewData["Title"] = "Dashboard";
     Layout = "";
@@ -8,9 +9,31 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400" rel="stylesheet">
 
 </head>
-<h1>Dashboard</h1>
-@for (int i = 0; i < 10; i++)
-{
-@Html.Partial("_DashboardPostPartial", null);
+<partial name="_UserPostArea" />
 
+@foreach (ThumbnailPostViewModel thumb in Model)
+{
+    <partial name="_DashboardPostPartial" , model="thumb" />
 }
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ns-autogrow/1.1.6/jquery.ns-autogrow.min.js"></script>
+<script>
+    $("#postTextArea").autogrow();
+
+    function answer(value)
+    {
+        $.get('@Url.Action("AnswerPost","Home")', {},
+            function (response) {
+                $('.post' + value).after(response);
+
+            })
+    }
+
+    function reply(value)
+    {
+        $('.post' + value).slideUp();
+    }
+</script>
