@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -19,15 +20,20 @@ namespace Socialnetwork.Webclient.Controllers
 {
     public class RecentPostsController : Controller
     {
-        UserManager<ApplicationUser> UserManager;
-        IRepoPost repoP;
-        IRepoUser repoU;
+        //Permet d'avoir le path root du serveur
+        private readonly IHostingEnvironment hostingEnvironment;
+        private UserManager<ApplicationUser> UserManager;
+        private IRepoPost repoP;
+        private IRepoUser repoU;
+        private IControllerHelper cHelper;
 
-        public RecentPostsController(UserManager<ApplicationUser> _usermanager, IRepoPost _repoP, IRepoUser _repoU)
+        public RecentPostsController(UserManager<ApplicationUser> _usermanager, IRepoPost _repoP, IRepoUser _repoU, IHostingEnvironment environment, IControllerHelper _cHelper)
         {
-            UserManager = _usermanager;
-            repoP = _repoP;
-            repoU = _repoU;
+            this.UserManager = _usermanager;
+            this.repoP = _repoP;
+            this.repoU = _repoU;
+            this.hostingEnvironment = environment;
+            this.cHelper = _cHelper;
         }
         // GET: Post
         [HttpGet]
@@ -41,26 +47,45 @@ namespace Socialnetwork.Webclient.Controllers
         [Authorize]
         public IActionResult Create()
         {
-            return View();
+            return View(new CreateEditPostViewModel());
         }
         // POST: Post/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public IActionResult Create(Post post)
+        public IActionResult Create(CreateEditPostViewModel model)
         {
             try
             {
                 if (User.Identity.IsAuthenticated)
                 {
-                    post.PostTime = DateTime.Now;
-                    post.IsOriginalPost = true;
-                    post.Poster = repoU.GetById(ControllerHelper.GetUserId(User));
-                    repoP.AddPost(post);
+                    if (ModelState.IsValid)
+                    {
+                        Post post = new Post();
+                        post.PostContent = model.PostContent;
+                        post.PostTime = DateTime.Now;
+                        post.IsOriginalPost = true;
+                        post.Poster = repoU.GetById(cHelper.GetUserId(User));
+                        if(model.Images != null)
+                        {
+                            List<string> imagesPath = cHelper.UploadImages(model.Images, hostingEnvironment, "imagesupload");
+                            List<PostImage> postimages = new List<PostImage>();
+                            foreach(var path in imagesPath)
+                            {
+                                postimages.Add(new PostImage
+                                {
+                                    Url = path,
+                                    Post = post,
+                                });
+                            }
+                            post.Images = postimages;
+                        }
+                        repoP.AddPost(post);
+                    }
                 }
-                return View(nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception ex)
             {
                 return View();
             }
@@ -70,18 +95,15 @@ namespace Socialnetwork.Webclient.Controllers
         {
             try
             {
-                int likeOp = 0;
                 if (User.Identity.IsAuthenticated)
                 {
-                    Post post = repoP.GetById(postId);
-                    User user = repoU.GetById(ControllerHelper.GetUserId(User));
-                    likeOp = repoP.LikePost(post, user);
+                    return cHelper.Like(postId);
                 }
-                return Json(new { id = postId, likeOperation = likeOp });
+                return View();
             }
             catch
             {
-                return Json("Erreur dans la méthode Like du controller RecentPosts");
+                return View();
             }
         }
         [Authorize]
@@ -89,14 +111,11 @@ namespace Socialnetwork.Webclient.Controllers
         {
             try
             {
-                int likeOp = 0;
                 if (User.Identity.IsAuthenticated)
                 {
-                    Post post = repoP.GetById(postId);
-                    User user = repoU.GetById(ControllerHelper.GetUserId(User));
-                    likeOp = repoP.DislikePost(post, user);
+                    return cHelper.Dislike(postId);
                 }
-                return Json(new { id = postId, likeOperation = likeOp });
+                return View();
             }
             catch
             {
@@ -107,19 +126,22 @@ namespace Socialnetwork.Webclient.Controllers
         // GET: Post/Edit/5
         public IActionResult Edit(int id)
         {
-            return View();
+            return View(repoP.GetById(id).ToEditViewModel());
         }
 
         // POST: Post/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, IFormCollection collection)
+        public IActionResult Edit(int id, CreateEditPostViewModel model)
         {
             try
             {
-                // TODO: Add update logic here
-                repoP.UpdatePost(id);
-                return RedirectToAction(nameof(Index));
+                if (User.Identity.IsAuthenticated)
+                {
+                    cHelper.EditPost(id, model, hostingEnvironment);
+                    return RedirectToAction(nameof(Index));
+                }
+                return View();
             }
             catch
             {
@@ -157,31 +179,28 @@ namespace Socialnetwork.Webclient.Controllers
         [Authorize]
         public IActionResult Reply(int postId)
         {
-            return View(repoP.GetById(postId).ToReplyViewModel());
+            if (User.Identity.IsAuthenticated)
+            {
+                return View(repoP.GetById(postId).ToReplyViewModel());
+            }
+            return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
         [Route("/RecentPosts/Reply/", Name = "inResponseId")]
-        public IActionResult Reply(int inResponseToId, ReplyViewModel rvm)
+        public IActionResult Reply(int inResponseToId, ReplyViewModel model)
         {
             try
             {
                 if (User.Identity.IsAuthenticated)
                 {
-                    Post response = new Post();
-                    response.PostContent = rvm.PostContent;
-                    response.PostTime = DateTime.Now;
-                    response.IsOriginalPost = false;
-                    response.Poster = repoU.GetById(ControllerHelper.GetUserId(User));
-                    Post inResponseTo = repoP.GetById(inResponseToId);
-
-                    repoP.ReplyToPost(inResponseTo, response);
-                    if(inResponseTo.IsOriginalPost == true)
+                    Post inResponseTo = cHelper.Reply(inResponseToId, model, hostingEnvironment);
+                    if (inResponseTo.IsOriginalPost == true)
                     {
-                        return RedirectToAction(nameof(Post), inResponseTo.OriginalPost.PostId);
+                        return RedirectToAction(nameof(Post), inResponseToId);
                     }
-                    return RedirectToAction(nameof(Post), inResponseTo);
+                    return RedirectToAction(nameof(Post), inResponseTo.OriginalPost.PostId);
                 }
                 return View();
             }

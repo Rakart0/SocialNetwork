@@ -212,6 +212,8 @@ namespace SocialNetwork.Data.Migrations
 
                     b.Property<int?>("AnnouncedPostPostId");
 
+                    b.Property<string>("Description");
+
                     b.Property<string>("GroupName")
                         .IsRequired()
                         .HasMaxLength(50);
@@ -236,6 +238,19 @@ namespace SocialNetwork.Data.Migrations
                     b.HasIndex("GroupId");
 
                     b.ToTable("GroupPosts");
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.GroupUser", b =>
+                {
+                    b.Property<int>("GroupId");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("GroupId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("GroupUser");
                 });
 
             modelBuilder.Entity("SocialNetwork.Data.Models.Hashtag", b =>
@@ -426,7 +441,7 @@ namespace SocialNetwork.Data.Migrations
             modelBuilder.Entity("SocialNetwork.Data.Models.Group", b =>
                 {
                     b.HasOne("SocialNetwork.Data.Models.User", "Admin")
-                        .WithMany("SubscribedGroups")
+                        .WithMany()
                         .HasForeignKey("AdminUserId");
 
                     b.HasOne("SocialNetwork.Data.Models.Post", "AnnouncedPost")
@@ -444,6 +459,19 @@ namespace SocialNetwork.Data.Migrations
                     b.HasOne("SocialNetwork.Data.Models.Post", "Post")
                         .WithMany("TaggedGroups")
                         .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SocialNetwork.Data.Models.GroupUser", b =>
+                {
+                    b.HasOne("SocialNetwork.Data.Models.Group", "Group")
+                        .WithMany("SubscribedUsers")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SocialNetwork.Data.Models.User", "User")
+                        .WithMany("SubscribedGroups")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

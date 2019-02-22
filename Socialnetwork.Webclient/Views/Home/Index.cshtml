@@ -5,4 +5,16 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        @Html.TextBox("searchArea")
+        <input type="submit" value="Chercher" />
+    }
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>
+    <script>
+        $("#searchArea").autocomplete({
+            source: "/Home/Search"
+        });
+    </script>
 </div>
