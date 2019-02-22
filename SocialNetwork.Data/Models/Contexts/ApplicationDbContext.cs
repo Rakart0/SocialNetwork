@@ -61,13 +61,8 @@ namespace Socialnetwork.Webclient.Data
                 .WithMany(g => g.TaggedGroups)
                 .HasForeignKey(fk => fk.PostId);
 
-            modelBuilder.Entity<User>()
-                .HasMany(u => u.SubscribedGroups)
-                .WithOne(g => g.Admin);
-
             modelBuilder.Entity<Group>()
-                .HasOne(g => g.Admin)
-                .WithMany(u => u.SubscribedGroups);
+                .HasOne(g => g.Admin);
 
             modelBuilder.Entity<HashtagPost>()
                 .HasKey(hp => new { hp.HashtagId, hp.PostId });
@@ -117,13 +112,16 @@ namespace Socialnetwork.Webclient.Data
                 .HasKey(u => u.Url);
             modelBuilder.Entity<PostImage>()
                 .HasOne(p => p.Post);
-                
-                
-
-
-
+            modelBuilder.Entity<GroupUser>()
+                .HasKey(k => new { k.GroupId, k.UserId });
+            modelBuilder.Entity<GroupUser>()
+                .HasOne(g => g.Group)
+                .WithMany(u => u.SubscribedUsers)
+                .HasForeignKey(fk => fk.GroupId);
+            modelBuilder.Entity<GroupUser>()
+                .HasOne(u => u.User)
+                .WithMany(g => g.SubscribedGroups)
+                .HasForeignKey(fk => fk.UserId);
         }
-
-
     }
 }

@@ -14,7 +14,9 @@ namespace SocialNetwork.Data.Models
         [Required]
         [StringLength(50, MinimumLength =3)]
         public string GroupName { get; set; }
+        public string Description { get; set; }
         public virtual IEnumerable<GroupPost>  Posts {get; set;}
+        public virtual IEnumerable<GroupUser> SubscribedUsers { get; set; }
         //public int AdminId { get; set; }
         //[Required]
         //[ForeignKey("UserId")]

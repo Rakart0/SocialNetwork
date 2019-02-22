@@ -14,16 +14,16 @@ namespace SocialNetwork.Data.Repository
         ApplicationDbContext ctx;
 
         public RepoPost(ApplicationDbContext _context)
-            {
+        {
             ctx = _context;
-            }
+        }
         public IEnumerable<Post> GetAll()
         {
             return ctx.Posts;
         }
         public Post GetById(int id)
         {
-            return ctx.Posts.FirstOrDefault(p => p.PostId == id);
+            return ctx.Posts.Find(id);
         }
         public int AddPost(Post p)
         {
@@ -45,7 +45,7 @@ namespace SocialNetwork.Data.Repository
                 response.OriginalPost = inResponseTo.OriginalPost;
             }
             AddPost(response);
-            UpdatePost(inResponseTo.PostId);
+            UpdatePost(inResponseTo);
         }
 
         public int DeletePost(int id)
@@ -59,13 +59,11 @@ namespace SocialNetwork.Data.Repository
             return 0;
         }
 
-        public int UpdatePost(int id)
+        public int UpdatePost(Post updatedP)
         {
-            Post post = GetById(id);
-            if (post != null)
+            if (updatedP != null)
             {
-                //Moyen efficace de remplacer les valeurs de l'objet en DB par celles de l'objet reçu.
-                ctx.Entry(post).CurrentValues.SetValues(post);
+                ctx.Entry(updatedP).CurrentValues.SetValues(updatedP);
                 return ctx.SaveChanges();
             }
             return 0;
