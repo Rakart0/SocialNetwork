@@ -52,7 +52,7 @@ namespace Socialnetwork.Webclient.Controllers
                 {
                     post.PostTime = DateTime.Now;
                     post.IsOriginalPost = true;
-                    post.Poster = repoU.GetById(ControllerHelper.GetUserId(User));
+                    post.Poster = repoU.GetById(cHelper.GetUserId(User));
                     repoP.AddPost(post);
                 }
                 return Json(true);
@@ -221,7 +221,7 @@ namespace Socialnetwork.Webclient.Controllers
                 response.PostContent = rvm.PostContent;
                 response.PostTime = DateTime.Now;
                 response.IsOriginalPost = false;
-                response.Poster = repoU.GetById(ControllerHelper.GetUserId(User));
+                response.Poster = repoU.GetById(cHelper.GetUserId(User));
                 Post inResponseTo = repoP.GetById(rvm.InResponseToId);
 
                 repoP.ReplyToPost(inResponseTo, response);

@@ -25,24 +25,17 @@ namespace Socialnetwork.Webclient.Controllers
         IRepoUser repoU;
         IRepoGroup repoG;
         IRepoHashtag repoH;
+        IRepoPost repoP;
         UserManager<ApplicationUser> UserManager;
 
-        public HomeController(IRepoUser _repoU, IRepoGroup _repoG, IRepoHashtag _repoH, UserManager<ApplicationUser> _usermanager)
+        public HomeController(IRepoUser _repoU, IRepoGroup _repoG, IRepoHashtag _repoH, UserManager<ApplicationUser> _usermanager, IRepoPost _repoP)
         {
             repoU = _repoU;
             repoG = _repoG;
             repoH = _repoH;
-        IRepoPost repoP;
-
-        UserManager<ApplicationUser> UserManager;
- 
-
-        public HomeController(IRepoUser _repoU, UserManager<ApplicationUser> _usermanager, IRepoPost _repoP)
-        {
-            repoU = _repoU;
             repoP = _repoP;
-            UserManager = _usermanager;
         }
+ 
 
         public IActionResult Index(string searchArea)
         {
@@ -53,6 +46,7 @@ namespace Socialnetwork.Webclient.Controllers
             else if(searchArea.StartsWith("@"))
             {
                 string userId = repoU.GetByName(searchArea.Replace("@", "")).UserId;
+                return RedirectToAction("Detail", "UserInfo", new { id = userId });
             }
             else if(searchArea.StartsWith("/"))
             {

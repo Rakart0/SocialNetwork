@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "44ab03bb3bce2a461d2fa4d9c868626bbdb15f96"
+    "signature": "8a2a74494725300b87335765f4f6ed456226f8b2"
   },
   "compilationOptions": {
     "defines": [
@@ -29,13 +29,20 @@
           "Microsoft.EntityFrameworkCore.Proxies": "2.2.2",
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.0",
-          "SocialNetwork.Data": "1.0.0"
+          "SocialNetwork.Data": "1.0.0",
+          "jQuery.UI.Combined": "1.12.1",
+          "typeahead.js-bootstrap.css": "0.0.4"
         },
         "runtime": {
           "Socialnetwork.Webclient.dll": {}
         },
         "compile": {
           "Socialnetwork.Webclient.dll": {}
+        }
+      },
+      "bootstrap/3.0.0": {
+        "dependencies": {
+          "jQuery": "1.12.4"
         }
       },
       "Castle.Core/4.2.1": {
@@ -59,6 +66,12 @@
         },
         "compile": {
           "lib/netstandard1.3/Castle.Core.dll": {}
+        }
+      },
+      "jQuery/1.12.4": {},
+      "jQuery.UI.Combined/1.12.1": {
+        "dependencies": {
+          "jQuery": "1.12.4"
         }
       },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
@@ -717,6 +730,17 @@
           "System.Reflection.Extensions": "4.3.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0"
+        }
+      },
+      "Twitter.Typeahead/0.10.0": {
+        "dependencies": {
+          "jQuery": "1.12.4"
+        }
+      },
+      "typeahead.js-bootstrap.css/0.0.4": {
+        "dependencies": {
+          "Twitter.Typeahead": "0.10.0",
+          "bootstrap": "3.0.0"
         }
       },
       "SocialNetwork.Data/1.0.0": {
@@ -3666,12 +3690,33 @@
       "serviceable": false,
       "sha512": ""
     },
+    "bootstrap/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d1JUd1ZjfbhGGTxjBSjCLIV+O//hZDcvI0hnaeTL3VHAD+6Z89vgPwV0K/nmPM4hZKq172iPV55lCSpohT6WmA==",
+      "path": "bootstrap/3.0.0",
+      "hashPath": "bootstrap.3.0.0.nupkg.sha512"
+    },
     "Castle.Core/4.2.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-XSNA0Gc1Zu33L+8+/3Tqt+aFu8QWS8UenVHZ7RenIP5wJfhoLrA4PnNscpxReeo5aBq8PDoGnV8rNaOzIOUo/w==",
       "path": "castle.core/4.2.1",
       "hashPath": "castle.core.4.2.1.nupkg.sha512"
+    },
+    "jQuery/1.12.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pIYtWlFI5PGlJVB8jm9H96pAQ27jQhA9sCxMeGweeC3ByQRaB8BwkIuGdTt4go3IEKTmmfRC2y5k0FLFizWDQg==",
+      "path": "jquery/1.12.4",
+      "hashPath": "jquery.1.12.4.nupkg.sha512"
+    },
+    "jQuery.UI.Combined/1.12.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5B0LrPZ0TLlwplPRu43h7fgMtDxMMEF31HajUqHSOJ7bC6nyJUJy7AkcuGaJdBrrZAZutnSBgXT01BGiIIC4TQ==",
+      "path": "jquery.ui.combined/1.12.1",
+      "hashPath": "jquery.ui.combined.1.12.1.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
@@ -3945,6 +3990,20 @@
       "sha512": "sha512-Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
+    },
+    "Twitter.Typeahead/0.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UInNTJACKxxSFbyd5S744+a0RlEQGbxQr1dmz1X9ZDwKsSG3CacTF/PH5FoJHHC29tvlXI7oLrSCHXFV28GlcA==",
+      "path": "twitter.typeahead/0.10.0",
+      "hashPath": "twitter.typeahead.0.10.0.nupkg.sha512"
+    },
+    "typeahead.js-bootstrap.css/0.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ePpcmGXS5g6ovxvxUjfK9bdiEoo2lLv4D7sZIOgddz4k7UqTmEaiUv+kp8C85F6NzYXNqwqKwTUd9kF/4akzUQ==",
+      "path": "typeahead.js-bootstrap.css/0.0.4",
+      "hashPath": "typeahead.js-bootstrap.css.0.0.4.nupkg.sha512"
     },
     "SocialNetwork.Data/1.0.0": {
       "type": "project",

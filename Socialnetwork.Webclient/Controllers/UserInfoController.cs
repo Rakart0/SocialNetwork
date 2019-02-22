@@ -29,6 +29,11 @@ namespace Socialnetwork.Webclient.Controllers
             return View(repo.GetFollowing(GetId()));
         }
 
+        public IActionResult Detail(string id)
+        {
+            var u = repo.GetById(id);
+            return View(u);
+        }
         public IActionResult Users()
         {
             return View(repo.GetAllWithFollowing().ToUi(repo.GetByIdWithFollowing(GetId())));

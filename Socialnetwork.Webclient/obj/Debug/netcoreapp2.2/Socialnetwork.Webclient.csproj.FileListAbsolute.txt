@@ -159,3 +159,7 @@ D:\Work\Progra\C#\Technifutur\SocialNetwork\Socialnetwork.Webclient\obj\Debug\ne
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_UserPostArea.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_PostAnswers.g.cshtml.cs
 C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_UserReplyArea.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Group\Create.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Group\Details.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\Group\Index.g.cshtml.cs
+C:\DevNet_2018\SocialNetwork\Socialnetwork.Webclient\obj\Debug\netcoreapp2.2\Razor\Views\UserInfo\Detail.g.cshtml.cs

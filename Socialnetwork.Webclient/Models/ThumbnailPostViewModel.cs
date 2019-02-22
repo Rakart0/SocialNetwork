@@ -17,7 +17,6 @@ namespace Socialnetwork.Webclient.Models
         public string PosterId;
         public string PosterName;
         public IEnumerable<string> Images { get; set; }
-=======
         public string PosterImageUrl { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace Socialnetwork.Webclient.Controllers.Converters
                 tpvm.Images = images;
             }
             tpvm.PosterImageUrl = p.Poster.UserPictureUrl;
->>>>>>> ca6303e0e014d808b556d197caa39cd500c3227b
+
             //pvm.TaggedGroups = p.TaggedGroups.Select(tg => tg.Group.GroupName);
 
             return tpvm;
