@@ -33,4 +33,7 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\ApplicationDb\" />
+  </ItemGroup>
 </Project>

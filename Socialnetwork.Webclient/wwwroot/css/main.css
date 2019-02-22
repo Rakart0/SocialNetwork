@@ -1,0 +1,337 @@
+﻿body {
+    background: linear-gradient(to right, #E9786B 66%, #E9896B);
+}
+
+#registerCont {
+    margin-top: 23vh;
+    width: 35vw;
+    float: right;
+    margin-right: 7vw;
+}
+
+#loginCont {
+    margin-top: 23vh;
+    width: 35vw;
+    float: left;
+    margin-left: 7vw;
+}
+
+.registerBox {
+    background-color: white;
+    border-radius: 30px;
+    padding-bottom: 25px;
+}
+
+.registerBox {
+    background-color: white;
+    border-radius: 30px;
+    padding-bottom: 25px;
+}
+
+#rememberme {
+    position: absolute;
+}
+
+#chckmark {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    border: 2px solid rgb(114, 114, 114);
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    transition: all .2s ease;
+}
+
+    #chckmark:active {
+        border-radius: 10px;
+        transition: all .2s ease;
+    }
+
+    #chckmark:checked {
+        background-color: rgb(114, 114, 114);
+        transition: all .2s ease;
+    }
+
+
+#rememberUser {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-left: 10%;
+    color: #E9786B;
+    font-size: 1.25vw;
+}
+
+
+#quoteoftheday {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 4vw;
+    width: 35vw;
+    float: right;
+    color: white;
+    margin-top: 23vh;
+    text-align: right;
+    margin-left: 7vh;
+    margin-right: 7vh;
+}
+
+
+
+#quoteoftheday {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 4vw;
+    width: 35vw;
+    float: right;
+    color: white;
+    margin-top: 23vh;
+    text-align: right;
+    margin-left: 7vh;
+    margin-right: 7vh;
+}
+
+#quoteAuthor {
+    font-size: 2.75vw;
+}
+
+.registerbtn {
+    text-align: center;
+    margin: auto;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 1.25vw;
+    color: white;
+    margin-top: 4vh;
+}
+
+.switchbtn {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25vw;
+    color: #E9786B;
+    font-weight: 300;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5648614px;
+    margin-top: 10px;
+    background-color: white;
+    transition: 0.1s;
+}
+
+    .switchbtn:hover {
+        background-color: rgb(189, 103, 93);
+        color: white;
+        transition: 0.1s;
+    }
+
+    .switchbtn:active {
+        background-color: rgb(128, 64, 57)
+    }
+
+.formLbl {
+    margin-left: 10%;
+}
+
+.registerForm {
+    margin-top: 6vh;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+
+.forminput {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    color: #E9786B;
+    font-size: 1.25vw;
+    list-style: none;
+}
+
+.valbtn {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5vw;
+    color: white;
+    font-weight: 300;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5648614px;
+    background-color: #E9786B;
+    transition: 0.1s;
+    display: block;
+    margin: auto;
+}
+
+    .valbtn:hover {
+        background-color: rgb(202, 99, 87);
+    }
+
+.forminput input {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 1.2vw;
+    color: #B8A2A0;
+    width: 75%;
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: #E9786B 2px solid;
+}
+
+
+.grid-container {
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 15% auto 10%;
+    grid-template-rows: 20px auto 20px;
+    grid-gap: 2px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 0.75vw;
+    margin-bottom : 40px;
+}
+    
+.item1 {
+    text-align: center;
+    grid-row: 1 /4;
+}
+
+    .item1 img {
+        width: 75%;
+        border-radius: 10px;
+    }
+
+.userinfo {
+    color: #E9896B;
+    font-size: 1.5vw;
+}
+
+    .userinfo span {
+        color: #777777;
+        font-size: 0.75vw;
+    }
+
+.postcontent {
+    margin-top: 20px;
+    font-size: 1vw;
+}
+
+.followbtn {
+    margin-right: 10px;
+}
+
+    .followbtn button {
+        width: 100%;
+        font-size: 1vw;
+        color: white;
+        font-weight: 300;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 5648614px;
+        background-color: #E9786B;
+        display: block;
+    }
+
+.postinfo {
+    margin-top: 10px;
+}
+
+
+.postUserContainer {
+    display: grid;
+    grid-gap: 10px;
+    background-color: white;
+    padding: 10px;
+    grid-template-columns: 10% auto auto 30%;
+    grid-template-rows: auto auto;
+    width: 50%;
+    margin: auto;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+}
+
+.userPostGridItem {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px;
+}
+
+.postUserImage {
+    grid-row: 1 / span 2;
+}
+
+    .postUserImage img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+.userPostTextArea {
+    grid-column: 2 / 5;
+    background-color: #DFDFDF;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+.UserPostTagArea {
+    grid-column: 2 / 4;
+    background-color: #EFEFEF;
+    border-radius: 200px;
+    padding: 5px;
+}
+
+#postTextArea {
+    vertical-align: middle;
+    max-width: 40vw;
+    width: 100%;
+    outline: none;
+    overflow: hidden;
+    border: none;
+    font-size: 0.75vw;
+    background-color: #DFDFDF;
+    resize: none;
+    font-family: 'Nunito', sans-serif;
+    padding: 0;
+}
+
+#tagtextarea {
+    vertical-align: middle;
+    margin: none;
+    width: 99%;
+    outline: none;
+    border: none;
+    background-color: #EFEFEF;
+    font-family: 'Nunito', sans-serif;
+    resize: none;
+}
+
+.buttonPost {
+    padding: 0;
+}
+
+
+    .buttonPost button {
+        font-size: 1vw;
+        color: white;
+        font-weight: 300;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 5648614px;
+        background-color: #E9786B;
+        display: block;
+    }

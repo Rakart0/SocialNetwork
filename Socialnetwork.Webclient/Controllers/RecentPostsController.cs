@@ -42,6 +42,28 @@ namespace Socialnetwork.Webclient.Controllers
             return View(repoP.GetAll().Where(p => p.IsOriginalPost == true).ToThumbnail().OrderByDescending(p => p.PostTime));
         }
 
+        [HttpPost]
+        public JsonResult CreateNew(Post post)
+        {
+            var p = post;
+            try
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+                    post.PostTime = DateTime.Now;
+                    post.IsOriginalPost = true;
+                    post.Poster = repoU.GetById(ControllerHelper.GetUserId(User));
+                    repoP.AddPost(post);
+                }
+                return Json(true);
+            }
+            catch
+            {
+                return Json(true);
+            }
+
+        }
+
         // GET: Post/Create
         [HttpGet]
         [Authorize]

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Socialnetwork.Webclient.Controllers.Converters;
 using Socialnetwork.Webclient.Models;
 using SocialNetwork.Data.Models;
 using SocialNetwork.Data.Models.IdentityModels;
@@ -28,6 +29,14 @@ namespace Socialnetwork.Webclient.Controllers
             repoU = _repoU;
             repoG = _repoG;
             repoH = _repoH;
+        IRepoPost repoP;
+
+        UserManager<ApplicationUser> UserManager;
+
+        public HomeController(IRepoUser _repoU, UserManager<ApplicationUser> _usermanager, IRepoPost _repoP)
+        {
+            repoU = _repoU;
+            repoP = _repoP;
             UserManager = _usermanager;
         }
 
@@ -47,6 +56,11 @@ namespace Socialnetwork.Webclient.Controllers
                 return RedirectToAction("Details", "Group", new { id = groupId });
             }
             return View();
+        }
+
+        public IActionResult AnswerPost()
+        {
+            return PartialView("~/Views/Shared/_UserPostArea.cshtml");
         }
 
         [Authorize]
@@ -73,6 +87,13 @@ namespace Socialnetwork.Webclient.Controllers
             }
             return null;
         }
+
+        public IActionResult Dashboard()
+        {
+            return View(repoP.GetAll().Where(p => p.IsOriginalPost == true).ToThumbnail().OrderByDescending(p => p.PostId));
+            
+        }
+
         public string GetId()
         {
             var claimsIdentity = User.Identity as ClaimsIdentity;

@@ -3,6 +3,7 @@ using SocialNetwork.Data.Models;
 using SocialNetwork.Data.Repository;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ namespace Socialnetwork.Webclient.Controllers.Converters
             ThumbnailPostViewModel tpvm = new ThumbnailPostViewModel();
             tpvm.PostId = p.PostId;
             tpvm.PostContent = p.PostContent;
-            tpvm.PostTime = p.PostTime.ToShortDateString();
+            tpvm.PostTime = p.PostTime.ToString("dd/MM/yyy - hh:mm", CultureInfo.InvariantCulture);
             tpvm.Likes = p.Likes.Where(l => l.Like == true).Count() - p.Likes.Where(l => l.Like == false).Count();
             tpvm.PosterId = p.Poster.UserId;
             tpvm.PosterName = p.Poster.UserName;
@@ -28,6 +29,8 @@ namespace Socialnetwork.Webclient.Controllers.Converters
                 }
                 tpvm.Images = images;
             }
+            tpvm.PosterImageUrl = p.Poster.UserPictureUrl;
+>>>>>>> ca6303e0e014d808b556d197caa39cd500c3227b
             //pvm.TaggedGroups = p.TaggedGroups.Select(tg => tg.Group.GroupName);
 
             return tpvm;

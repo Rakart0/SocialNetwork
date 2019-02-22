@@ -1,0 +1,17 @@
+﻿@model ThumbnailPostViewModel
+
+@{
+    ViewData["Title"] = "_DashboardPostPartial";
+}
+
+
+<div class="grid-container @("post"+Model.PostId)">
+
+    <div class="item1"><img src="@Model.PosterImageUrl"> <br> @Model.Likes </div>
+    <div class="userinfo">@Model.PosterName <span>@Model.PostTime </span> </div>
+    <div class="followbtn"><button>follow</button></div>
+    <div class="postcontent"> @Model.PostContent </div>
+    <div class="empty"></div>
+    <div class="postinfo">Like Dislike <a href="#" onclick="answer('@Model.PostId')">Comment</a> <a href="#" onclick="reply('@Model.PostId')">Hide</a> </div>
+    <div class="empty"></div>
+</div>

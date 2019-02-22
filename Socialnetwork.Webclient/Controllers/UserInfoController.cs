@@ -56,6 +56,19 @@ namespace Socialnetwork.Webclient.Controllers
             return View("Index", repo.GetFollowing(GetId()));
 
         }
+        
+        [HttpGet]
+        public JsonResult AddFollow(string id)
+        {
+            repo.AddFollower(id, GetId());
+            return Json("");
+        }
+
+        public JsonResult RemoveFollow(string id)
+        {
+            repo.DeleteFollower(id, GetId());
+            return Json("");
+        }
 
         public string GetId()
         {
