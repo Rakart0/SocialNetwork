@@ -12,7 +12,6 @@ namespace SocialNetwork.Data.Repository.Interfaces
         IEnumerable<User> GetAllWithFollowing();
 
         User GetById(string id);
-        User GetByName(string name);
         User GetByIdWithFollowing(string id);
 
         int AddUser(User u);

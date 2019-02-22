@@ -12,7 +12,7 @@ namespace SocialNetwork.Data.Repository.Interfaces
         Post GetById(int id);
         int AddPost(Post p);
         void ReplyToPost(Post post, Post postResponse);
-        int UpdatePost(Post updatedP);
+        int UpdatePost(int id);
         int DeletePost(int id);
         //
         int LikePost(Post post, User user);

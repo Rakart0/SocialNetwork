@@ -16,6 +16,5 @@ namespace Socialnetwork.Webclient.Models
         //public IEnumerable<string> TaggedGroups { get; set; }
         public string PosterId;
         public string PosterName;
-        public IEnumerable<string> Images { get; set; }
     }
 }

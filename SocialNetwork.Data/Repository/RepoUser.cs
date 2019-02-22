@@ -35,10 +35,6 @@ namespace SocialNetwork.Data.Repository
         {
             return ctx.Users;
         }
-        public User GetByName(string name)
-        {
-            return ctx.Users.Where(u => u.UserName.ToLower().Contains(name.ToLower())).First();
-        }
 
         public IEnumerable<User> GetAllWithFollowing()
         {
