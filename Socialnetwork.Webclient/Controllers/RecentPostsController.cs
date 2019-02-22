@@ -181,9 +181,30 @@ namespace Socialnetwork.Webclient.Controllers
         {
             return View(repoP.GetById(postId).ToReplyViewModel());
         }
+        public IActionResult GetReply(int postId)
+        {
+            return View();
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Authorize]
+        public JsonResult AnswerToPost(ReplyViewModel rvm)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                Post response = new Post();
+                response.PostContent = rvm.PostContent;
+                response.PostTime = DateTime.Now;
+                response.IsOriginalPost = false;
+                response.Poster = repoU.GetById(ControllerHelper.GetUserId(User));
+                Post inResponseTo = repoP.GetById(rvm.InResponseToId);
+
+                repoP.ReplyToPost(inResponseTo, response);
+                return Json(true);
+            }
+            return Json(false);
+        }
+
+        [HttpPost]
         [Route("/RecentPosts/Reply/", Name = "inResponseId")]
         public IActionResult Reply(int inResponseToId, ReplyViewModel rvm)
         {

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Socialnetwork.Webclient.Controllers.Converters;
 using Socialnetwork.Webclient.Models;
 using SocialNetwork.Data.Models;
@@ -22,6 +25,7 @@ namespace Socialnetwork.Webclient.Controllers
         IRepoPost repoP;
 
         UserManager<ApplicationUser> UserManager;
+ 
 
         public HomeController(IRepoUser _repoU, UserManager<ApplicationUser> _usermanager, IRepoPost _repoP)
         {
@@ -36,11 +40,21 @@ namespace Socialnetwork.Webclient.Controllers
             return View();
         }
 
-        public IActionResult AnswerPost()
+        public IActionResult GetNumberOfAnswer(int id)
         {
-            return PartialView("~/Views/Shared/_UserPostArea.cshtml");
+            PostViewModel p = repoP.GetById(id).ToPostViewModel();
+            return PartialView("~/Views/Shared/_PostAnswers.cshtml", p);
+
         }
 
+        public IActionResult AnswerPost(int id)
+        {
+            //PostViewModel p = repoP.GetById(id).ToPostViewModel();
+            //return PartialView("~/Views/Shared/PostAnswers.cshtml", p);
+            ViewBag.value = id;
+            return PartialView("~/Views/Shared/_UserReplyArea.cshtml");
+        }
+            
         [Authorize]
         public IActionResult Privacy()
         {

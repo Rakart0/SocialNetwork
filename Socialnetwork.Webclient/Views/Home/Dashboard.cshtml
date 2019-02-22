@@ -25,7 +25,12 @@
 
     function answer(value)
     {
-        $.get('@Url.Action("AnswerPost","Home")', {},
+        $.get("/Home/AnswerPost/" + value, {},
+            function (response) {
+                $('.post' + value).after(response);
+
+            })
+        $.get("/Home/GetNumberOfAnswer/" + value, {},
             function (response) {
                 $('.post' + value).after(response);
 
@@ -36,4 +41,6 @@
     {
         $('.post' + value).slideUp();
     }
+
+
 </script>

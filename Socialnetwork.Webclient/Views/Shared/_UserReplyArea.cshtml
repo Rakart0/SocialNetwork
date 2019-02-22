@@ -1,0 +1,39 @@
+﻿
+<div class="postUserContainer">
+    <div class="postUserImage userPostGridItem"><img src="http://chittagongit.com//images/default-user-icon/default-user-icon-8.jpg"></div>
+    <div class="userPostGridItem userPostTextArea"><textarea id="replyTextArea" rows="1" placeholder="Type you answer here"></textarea></div>
+    @*<div class="userPostGridItem UserPostTagArea"><textarea id="tagtextarea" rows="1" placeholder="@@Tag' user and #Post"></textarea></div>*@
+    <div class="userPostGridItem buttonPost"><button id="ReplyMsg">Reply to @ViewBag.value</button></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(function () {
+
+            $(document).on('click', '#ReplyMsg', function () {
+
+                $.ajax({
+                    type: "POST",
+                    url: '/RecentPosts/AnswerToPost/',
+                    dataType: "json",
+                    data: {
+                        PostContent: $('#replyTextArea').val(),
+                        InResponseToId: @ViewBag.value},
+                    success: function (response) {
+                        if (response == true) {
+                            location.reload();
+                        }
+                    }
+                });
+            });
+        });
+    });
+
+
+
+
+
+
+</script>

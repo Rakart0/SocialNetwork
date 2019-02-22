@@ -1,0 +1,15 @@
+﻿@model Socialnetwork.Webclient.Models.PostViewModel
+
+@foreach (var item in Model.Responses){
+
+    <div class="grid-container-answer ">
+
+        <div class="item1"><br> @item.Likes </div>
+        <div class="userinfo">@item.PosterName <span>@item.PostTime </span> </div>
+        <div class="followbtn"><button>follow</button></div>
+        <div class="postcontent"> @item.PostContent </div>
+        <div class="empty"></div>
+        <div class="postinfo">Like Dislike Comment </div>
+        <div class="empty"></div>
+    </div>
+ }
