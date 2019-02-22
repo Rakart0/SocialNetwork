@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Socialnetwork.Webclient.Models
 {
-    public class CreatePostViewModel
+    public class CreateEditPostViewModel
     {
         public string PostContent { get; set; }
-        List<IFormFile> Images { get; set; }
+        public List<IFormFile> Images { get; set; }
     }
 }

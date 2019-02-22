@@ -9,14 +9,6 @@ namespace Socialnetwork.Webclient.Models
 {
     public class ThumbnailPostViewModel
     {
-        public ThumbnailPostViewModel()
-        {
-
-        }
-        public ThumbnailPostViewModel(string postContent)
-        {
-            
-        }
         public int PostId { get; set; }
         public string PostContent { get; set; }
         public string PostTime { get; set; }
@@ -24,6 +16,8 @@ namespace Socialnetwork.Webclient.Models
         public IEnumerable<string> TaggedGroups { get; set; }
         public string PosterId;
         public string PosterName;
+        public IEnumerable<string> Images { get; set; }
+=======
         public string PosterImageUrl { get; set; }
     }
 }

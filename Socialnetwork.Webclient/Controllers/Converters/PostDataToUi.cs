@@ -20,13 +20,21 @@ namespace Socialnetwork.Webclient.Controllers.Converters
             tpvm.Likes = p.Likes.Where(l => l.Like == true).Count() - p.Likes.Where(l => l.Like == false).Count();
             tpvm.PosterId = p.Poster.UserId;
             tpvm.PosterName = p.Poster.UserName;
+            if(p.Images != null)
+            {
+                List<string> images = new List<string>();
+                foreach (var item in p.Images)
+                {
+                    images.Add(item.Url);
+                }
+                tpvm.Images = images;
+            }
             tpvm.PosterImageUrl = p.Poster.UserPictureUrl;
+>>>>>>> ca6303e0e014d808b556d197caa39cd500c3227b
             //pvm.TaggedGroups = p.TaggedGroups.Select(tg => tg.Group.GroupName);
 
             return tpvm;
         }
-
-
 
         public static IEnumerable<ThumbnailPostViewModel> ToThumbnail(this IEnumerable<Post> lstP)
         {
@@ -86,6 +94,13 @@ namespace Socialnetwork.Webclient.Controllers.Converters
             {
                 return null;
             }
+        }
+        public static CreateEditPostViewModel ToEditViewModel(this Post p)
+        {
+            return new CreateEditPostViewModel
+            {
+                PostContent = p.PostContent
+            };
         }
     }
 }

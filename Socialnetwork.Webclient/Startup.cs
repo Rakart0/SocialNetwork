@@ -17,6 +17,7 @@ using SocialNetwork.Data.Models;
 using SocialNetwork.Data.Repository;
 using SocialNetwork.Data.Repository.Interfaces;
 using SocialNetwork.Data.Models.IdentityModels;
+using Socialnetwork.Webclient.Helpers;
 
 namespace Socialnetwork.Webclient
 {
@@ -51,6 +52,9 @@ namespace Socialnetwork.Webclient
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddTransient<IRepoUser, RepoUser>();
             services.AddTransient<IRepoPost, RepoPost>();
+            services.AddTransient<IRepoGroup, RepoGroup>();
+            services.AddTransient<IControllerHelper, ControllerHelper>();
+            services.AddTransient<IRepoHashtag, RepoHashtag>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
